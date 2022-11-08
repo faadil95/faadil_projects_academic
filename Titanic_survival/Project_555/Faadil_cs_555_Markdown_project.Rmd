@@ -1,0 +1,322 @@
+---
+title: "**Analysis of Titanic shipwreck**"
+author: "**Mohamed Faadil**"
+output:
+  html_document: 
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+options(digits = 4 , scipen = 4)
+setwd("/Users/faadil/Desktop/Boston_University/CS-555/Project/Project_555") 
+library(tidyverse)
+#install.packages('caTools')
+library(caTools)
+#install.packages("ggcorrplot")
+library("ggcorrplot")
+#install.packages("fastDummies") 
+library(fastDummies)
+#install.packages("lsmeans")
+library("lsmeans")
+#install.packages("ggfortify") ## installation required
+library(ggfortify)
+#install.packages("olsrr") ## installation required
+library("olsrr")
+library(car)
+library(GGally)
+library(PerformanceAnalytics)
+
+# A Prefix nulling hook.
+
+# Make sure to keep the default for normal processing.
+default_output_hook <- knitr::knit_hooks$get("output")
+
+# Output hooks handle normal R console output.
+knitr::knit_hooks$set( output = function(x, options) {
+
+  comment <- knitr::opts_current$get("comment")
+  if( is.na(comment) ) comment <- ""
+  can_null <- grepl( paste0( comment, "\\s*\\[\\d?\\]" ),
+                     x, perl = TRUE)
+  do_null <- isTRUE( knitr::opts_current$get("null_prefix") )
+  if( can_null && do_null ) {
+    # By default R print output aligns at the right brace.
+    align_index <- regexpr( "\\]", x )[1] - 1
+    # Two cases: start or newline
+    re <- paste0( "^.{", align_index, "}\\]")
+    rep <- comment
+    x <- gsub( re, rep,  x )
+    re <- paste0( "\\\n.{", align_index, "}\\]")
+    rep <- paste0( "\n", comment )
+    x <- gsub( re, rep,  x )
+  }
+
+  default_output_hook( x, options )
+
+})
+
+knitr::opts_template$set("kill_prefix"=list(comment=NA, null_prefix=TRUE))
+knitr::opts_chunk$set(opts.label="kill_prefix")
+```
+
+```{css, echo=FALSE}
+.main-container {
+    max-width: 100%;
+}
+pre {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial;
+}
+body, td {
+  font-size: 20px;
+  font-family: Arial;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: Arial;
+}
+```
+## **Data Set Description**
+
+
+This Data set has 891 rows and 12 columns. There are 11 predictor variables and 1 target variable.
+
+```{r data set description, echo=FALSE}
+#import data 
+df <- read.csv("/Users/faadil/Desktop/Boston_University/CS-555/Project/Project_555/titanic_population.csv", header = TRUE)
+head(df)
+attach(df)
+df_clean <- (df[c(2,3,5,6,7,8,10,12)])
+df_clean <- na.omit(df_clean)
+df_clean <- head(df_clean,500)
+```
+
+## **Correlation Plot**
+```{r correlation plot, fig.align='center', fig.width=20, fig.height=13, echo=FALSE, results='hide'}
+chart.Correlation(df[,c(1,2,3,6,7,8,10)], histogram = TRUE, method = "pearson")
+```
+
+## **Explanatory Data Analysis**
+
+
+
+``` {r Explaratory Data Analysis}
+
+df_dummy <- fastDummies::dummy_cols(df_clean,
+select_columns = c("Sex","Embarked"))
+colnames(df_dummy)
+df_dummy <- df_dummy[c(1,2,4,5,6,7,9,10,12,13,14)]
+corr <- (cor(df_dummy[,-9]))
+ggcorrplot(corr, hc.order = F, outline.col = "white",
+           lab = TRUE, title= "Correlation heatmap")
+
+summary(df_clean)
+summary(subset(df_clean, df_clean$Survived ==0))
+summary(subset(df_clean, df_clean$Survived ==1))
+
+#Bar Plots Survived vs Non-Survived
+ggplot(df_clean, aes(x=Survived, y=Age, fill=Sex)) + 
+  geom_boxplot(outlier.colour="red", outlier.shape=8,
+               outlier.size=2, notch=FALSE) +
+  labs(title="Box plot",
+       x = "Survived",
+       y = "Age")
+
+ggplot(df_clean, aes(x=Survived, y=Age, fill=Sex)) + 
+  geom_bar(stat="identity") +
+  labs(title="Bar plot",
+       x = "Survived",
+       y = "")
+ggplot(df_clean, aes(x=Pclass, y=Survived, fill=Sex)) + 
+  geom_bar(stat="identity") +
+  labs(title="Bar plot",
+       x = "Passenger Class",
+       y = "")
+```
+
+
+## **Logistic Regression**
+
+Building logistic regression classification models with below classes.
+
+logistic regression of survived passengers as a function of passenger class. Passenger class is significant in determining the survival at 95% confidence interval
+
+``` {r Logistic Regression}
+
+## Passenger Class:
+m <- glm(Survived~Pclass, 
+         data = df_dummy , family = binomial)
+summary(m)
+
+```
+
+
+
+##Adjusting for age:
+
+Ran anova test on the following logistic regression model.
+
+Categorical variable: passenger class
+
+Covariate : Age
+
+They are both significant in determining the survival of passenger
+
+``` {r Logistic RRegression}
+library(car)
+Anova(glm(Survived~Pclass + Age, 
+         data = df_dummy , family = binomial), type = 3, test.statistic = "F")
+```
+
+
+## Regression with Gender
+
+Looking below we can determine gender is significant in determining the survival of passenger
+
+``` {r Logisticc Regression}
+
+m <- glm(Survived~Sex_female, 
+         data = df_dummy , family = binomial)
+summary(m)
+
+```
+
+
+#Adjusting for age:
+
+Ran anova test on the followinglogistic regression model.
+
+Categorical variable: Sex
+
+Covariate : Age
+
+Both are significant together in determining survival
+
+``` {r Annova Sex}
+Anova(glm(Survived~Sex_female+Age, 
+          data = df_dummy , family = binomial), type = 3, test.statistic = "F")
+
+```
+
+
+## Family
+
+Looking below we can determine Family is significant in determining the survival of passenger
+
+``` {r Anova Family}
+m <- glm(Survived~Parch, 
+         data = df_dummy , family = binomial)
+summary(m)
+```
+
+
+#Adjusting for age:
+
+Ran anova test on the following logistic regression model.
+
+Categorical variable: family
+
+Covariate : Age
+
+Both are not significant at 95 % CI to determine survival
+
+``` {r Anova Family adjusting age}
+Anova(glm(Survived~Parch+Age, 
+          data = df_dummy , family = binomial), type = 3, test.statistic = "F")
+
+```
+
+
+## Siblings
+
+Looking below we can determine sibling is not significant 
+
+``` {r Anova with Siblings}
+
+m <- glm(Survived~SibSp, 
+         data = df_dummy , family = binomial)
+summary(m)
+
+```
+
+
+#Adjusting for age:
+
+Ran anova test on the following logistic regression model.
+
+Categorical variable: Sibling
+
+Covariate : Age
+
+Both are not significant at 95 % CI to determine survival
+
+``` {r Anova sibling with age}
+Anova(glm(Survived~SibSp+Age, 
+          data = df_dummy , family = binomial), type = 3, test.statistic = "F")
+
+```
+
+## **Logistic Regression Classification Model**
+
+Fare is not significant in determining survival at  95% CI.
+
+``` {r Final Logistic Regression}
+#building the final logistic regression classification model
+
+set.seed(64)
+split = sample.split(df_dummy$Survived, SplitRatio = 0.8)
+training_set = subset(df_dummy, split == TRUE)
+test_set = subset(df_dummy, split == FALSE)
+training_set[-1] = scale(training_set[-1])
+test_set[-1] = scale(test_set[-1])
+
+classifier = glm(formula = Survived ~Pclass+Sex_female+Fare+Age,
+                 family = binomial,
+                 data = training_set)
+
+summary(classifier)
+```
+
+## **Predicting Test Set Results**
+
+We have used threshold as 0.5 to perform classification.
+
+``` {r Test Reuslts}
+# Predicting the Test set results
+model.probs <- predict(classifier, test_set, type = "response")
+model.pred <- rep(0, length(model.probs))
+model.pred[model.probs > 0.5] <- 1
+```
+
+## **Confusion Matrix**
+
+TN = 48
+FP = 10
+FN = 11
+TP = 31
+
+```{r Confusion Matrix}
+# Making the Confusion Matrix
+table(model.pred, test_set$Survived)
+
+# Accuracy 
+1- mean(model.pred != test_set$Survived)
+
+# ROC curve
+#install.packages("pROC")
+library(pROC)
+g <- roc(test_set$Survived ~ model.probs)
+print(g)
+plot(g, main = "ROC curve") 
+
+
+
+```
+
+## **Summary**
+
+We conclude that Passenger Class, gender were the significant parameters in survival. Initially, the female gender parameter showed some sort of correlation with passenger survival. These parameters were: Pclass, gender, age, Fare and # of family members. ANCOVA was performed, adjusting for age on such parameters, and finally it was found that age wasn’t a significant predictor if gender is the predictor. And, finally, Pclass, gender, and fare were the only significant predictors, once adjusted for age.
+Based on a logistic regression model, using Pclass, gender, Fare as its features, we could predict the survival with an accuracy of 79%. Another assessment of this model, the ROC curve, showed good results as the area under the ROC curve was 0.815.
+
