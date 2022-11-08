@@ -1,11 +1,6 @@
 # final-project-faadil95
 #### CS-521-A3
 
-# Project Members:
-
-1. MOHAMED FAADIL FAHIM SHAIKH
-2. DHARMIK TIMBADIA
-3. DHAIRYA TIMBADIA
 
 # Proposed Topic: Sarcasm Detection.
 
