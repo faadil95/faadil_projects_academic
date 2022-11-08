@@ -1,0 +1,503 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.J48 -- -C 0.25 -M 2
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R1-15,17-18
+Instances:    12250
+Attributes:   17
+              age
+              gender
+              region_category
+              membership_category
+              joined_through_referral
+              preferred_offer_types
+              medium_of_operation
+              internet_option
+              days_since_last_login
+              avg_time_spent
+              avg_transaction_value
+              points_in_wallet
+              used_special_discount
+              offer_application_preference
+              past_complaint
+              feedback
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+J48 pruned tree
+------------------
+
+points_in_wallet <= 700.05
+|   avg_transaction_value <= 50104.37
+|   |   points_in_wallet <= 499.434734
+|   |   |   membership_category = No Membership: 1 (201.0/7.0)
+|   |   |   membership_category = Platinum Membership: 0 (102.0)
+|   |   |   membership_category = Premium Membership: 0 (91.0)
+|   |   |   membership_category = Basic Membership: 1 (205.0/2.0)
+|   |   |   membership_category = Silver Membership
+|   |   |   |   points_in_wallet <= 422.427581
+|   |   |   |   |   feedback = Poor Website
+|   |   |   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   |   |   joined_through_referral = No: 1 (3.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes: 0 (3.0/1.0)
+|   |   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   |   avg_transaction_value <= 36192.85: 0 (4.0)
+|   |   |   |   |   |   |   avg_transaction_value > 36192.85: 1 (2.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic: 1 (11.0/1.0)
+|   |   |   |   |   feedback = Too many ads
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   past_complaint = No: 0 (4.0)
+|   |   |   |   |   |   |   past_complaint = Yes: 1 (3.0/1.0)
+|   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   region_category = Town: 1 (5.0)
+|   |   |   |   |   feedback = Quality Customer Care: 0 (3.0)
+|   |   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   |   medium_of_operation = Both: 1 (4.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   age <= 16: 0 (4.0)
+|   |   |   |   |   |   |   age > 16: 1 (7.0/1.0)
+|   |   |   |   |   |   medium_of_operation = Desktop: 1 (12.0/1.0)
+|   |   |   |   |   feedback = No reason specified
+|   |   |   |   |   |   points_in_wallet <= 289.957478: 1 (3.0)
+|   |   |   |   |   |   points_in_wallet > 289.957478: 0 (9.0/1.0)
+|   |   |   |   |   feedback = User Friendly Website: 0 (2.0)
+|   |   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   |   age <= 46: 1 (19.0/2.0)
+|   |   |   |   |   |   age > 46: 0 (7.0/2.0)
+|   |   |   |   |   feedback = Products always in Stock: 0 (2.0)
+|   |   |   |   |   feedback = Reasonable Price: 0 (2.0)
+|   |   |   |   points_in_wallet > 422.427581: 0 (21.0)
+|   |   |   membership_category = Gold Membership
+|   |   |   |   points_in_wallet <= 329.796825
+|   |   |   |   |   feedback = Poor Website
+|   |   |   |   |   |   used_special_discount = Yes: 1 (8.0)
+|   |   |   |   |   |   used_special_discount = No
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (1.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone: 0 (2.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop: 1 (4.0)
+|   |   |   |   |   feedback = Too many ads: 1 (8.0/2.0)
+|   |   |   |   |   feedback = Quality Customer Care: 0 (3.0)
+|   |   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   |   joined_through_referral = No: 1 (8.0/1.0)
+|   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   points_in_wallet <= 274.765397: 0 (3.0)
+|   |   |   |   |   |   |   points_in_wallet > 274.765397: 1 (4.0/1.0)
+|   |   |   |   |   feedback = No reason specified: 1 (9.0/3.0)
+|   |   |   |   |   feedback = User Friendly Website: 1 (0.0)
+|   |   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   |   past_complaint = No: 1 (11.0/1.0)
+|   |   |   |   |   |   past_complaint = Yes: 0 (5.0/1.0)
+|   |   |   |   |   feedback = Products always in Stock: 0 (1.0)
+|   |   |   |   |   feedback = Reasonable Price: 0 (2.0)
+|   |   |   |   points_in_wallet > 329.796825
+|   |   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   |   avg_transaction_value <= 30126.02: 0 (13.0)
+|   |   |   |   |   |   avg_transaction_value > 30126.02
+|   |   |   |   |   |   |   region_category = City: 0 (6.0/1.0)
+|   |   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   |   region_category = Town: 1 (4.0)
+|   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   |   points_in_wallet <= 355.900659: 0 (3.0)
+|   |   |   |   |   |   |   points_in_wallet > 355.900659: 1 (9.0/1.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers: 0 (7.0/1.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (9.0/3.0)
+|   |   |   |   |   internet_option = Fiber_Optic: 0 (20.0/2.0)
+|   |   points_in_wallet > 499.434734
+|   |   |   membership_category = No Membership: 1 (1986.0/71.0)
+|   |   |   membership_category = Platinum Membership: 0 (17.0)
+|   |   |   membership_category = Premium Membership: 0 (15.0)
+|   |   |   membership_category = Basic Membership: 1 (1933.0/76.0)
+|   |   |   membership_category = Silver Membership
+|   |   |   |   points_in_wallet <= 604.01
+|   |   |   |   |   points_in_wallet <= 565.77: 0 (7.0)
+|   |   |   |   |   points_in_wallet > 565.77: 1 (18.0)
+|   |   |   |   points_in_wallet > 604.01: 1 (566.0/17.0)
+|   |   |   membership_category = Gold Membership
+|   |   |   |   points_in_wallet <= 602.56
+|   |   |   |   |   points_in_wallet <= 599.36
+|   |   |   |   |   |   age <= 18: 1 (2.0)
+|   |   |   |   |   |   age > 18: 0 (15.0/2.0)
+|   |   |   |   |   points_in_wallet > 599.36
+|   |   |   |   |   |   points_in_wallet <= 601.61: 1 (11.0)
+|   |   |   |   |   |   points_in_wallet > 601.61
+|   |   |   |   |   |   |   avg_time_spent <= 54.44: 1 (2.0)
+|   |   |   |   |   |   |   avg_time_spent > 54.44: 0 (3.0)
+|   |   |   |   points_in_wallet > 602.56: 1 (591.0/22.0)
+|   avg_transaction_value > 50104.37: 0 (86.0)
+points_in_wallet > 700.05
+|   points_in_wallet <= 852.982674
+|   |   points_in_wallet <= 719.94
+|   |   |   membership_category = No Membership: 1 (112.0/2.0)
+|   |   |   membership_category = Platinum Membership: 0 (163.0)
+|   |   |   membership_category = Premium Membership: 0 (184.0)
+|   |   |   membership_category = Basic Membership: 1 (104.0/1.0)
+|   |   |   membership_category = Silver Membership
+|   |   |   |   avg_transaction_value <= 48947.72
+|   |   |   |   |   feedback = Poor Website
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   internet_option = Wi-Fi: 1 (7.0/1.0)
+|   |   |   |   |   |   |   internet_option = Mobile_Data: 1 (6.0/1.0)
+|   |   |   |   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   |   |   |   days_since_last_login <= 12: 1 (3.0)
+|   |   |   |   |   |   |   |   days_since_last_login > 12: 0 (6.0/1.0)
+|   |   |   |   |   |   region_category = Village
+|   |   |   |   |   |   |   used_special_discount = Yes: 1 (4.0/1.0)
+|   |   |   |   |   |   |   used_special_discount = No: 0 (8.0/1.0)
+|   |   |   |   |   |   region_category = Town
+|   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   |   |   medium_of_operation = Both: 1 (0.0)
+|   |   |   |   |   |   |   |   medium_of_operation = Smartphone: 1 (4.0)
+|   |   |   |   |   |   |   |   medium_of_operation = Desktop: 0 (3.0/1.0)
+|   |   |   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   |   |   avg_time_spent <= 698.66
+|   |   |   |   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   |   |   |   points_in_wallet <= 708.57: 1 (2.0)
+|   |   |   |   |   |   |   |   |   |   points_in_wallet > 708.57: 0 (2.0)
+|   |   |   |   |   |   |   |   |   joined_through_referral = Yes: 0 (6.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 698.66: 1 (2.0)
+|   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   |   |   age <= 37: 1 (3.0)
+|   |   |   |   |   |   |   |   age > 37: 0 (4.0)
+|   |   |   |   |   feedback = Too many ads
+|   |   |   |   |   |   gender = M
+|   |   |   |   |   |   |   past_complaint = No: 0 (18.0/2.0)
+|   |   |   |   |   |   |   past_complaint = Yes
+|   |   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (5.0/1.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   |   |   |   avg_transaction_value <= 38493.82: 1 (2.0)
+|   |   |   |   |   |   |   |   |   avg_transaction_value > 38493.82: 0 (2.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (2.0)
+|   |   |   |   |   |   gender = F
+|   |   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   |   |   |   |   avg_time_spent <= 359.13: 0 (3.0)
+|   |   |   |   |   |   |   |   |   avg_time_spent > 359.13: 1 (3.0)
+|   |   |   |   |   |   |   |   internet_option = Mobile_Data: 1 (5.0/1.0)
+|   |   |   |   |   |   |   |   internet_option = Fiber_Optic: 1 (7.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   |   offer_application_preference = No: 0 (5.0)
+|   |   |   |   |   |   |   |   offer_application_preference = Yes: 1 (5.0/1.0)
+|   |   |   |   |   feedback = Quality Customer Care: 0 (3.0)
+|   |   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   |   |   gender = M
+|   |   |   |   |   |   |   |   used_special_discount = Yes
+|   |   |   |   |   |   |   |   |   avg_time_spent <= 266.72: 0 (8.0)
+|   |   |   |   |   |   |   |   |   avg_time_spent > 266.72: 1 (2.0)
+|   |   |   |   |   |   |   |   used_special_discount = No: 1 (3.0/1.0)
+|   |   |   |   |   |   |   gender = F: 0 (6.0)
+|   |   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   |   avg_time_spent <= 168.19: 1 (8.0/1.0)
+|   |   |   |   |   |   |   avg_time_spent > 168.19: 0 (10.0/2.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   |   |   joined_through_referral = No: 0 (5.0/1.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   |   |   |   age <= 33: 1 (2.0)
+|   |   |   |   |   |   |   |   |   age > 33: 0 (3.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Without Offers: 1 (4.0/1.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (4.0/1.0)
+|   |   |   |   |   feedback = No reason specified
+|   |   |   |   |   |   gender = M
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (1.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   |   |   points_in_wallet <= 716.9: 0 (4.0/1.0)
+|   |   |   |   |   |   |   |   |   points_in_wallet > 716.9: 1 (3.0)
+|   |   |   |   |   |   |   |   joined_through_referral = Yes: 1 (5.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (2.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   |   |   |   joined_through_referral = No: 0 (4.0/1.0)
+|   |   |   |   |   |   |   |   |   joined_through_referral = Yes: 1 (2.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (3.0/1.0)
+|   |   |   |   |   |   gender = F
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (2.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   |   points_in_wallet <= 704.62: 1 (2.0)
+|   |   |   |   |   |   |   |   points_in_wallet > 704.62: 0 (11.0/1.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   |   |   used_special_discount = Yes
+|   |   |   |   |   |   |   |   |   avg_time_spent <= 176.64: 0 (6.0)
+|   |   |   |   |   |   |   |   |   avg_time_spent > 176.64: 1 (4.0/1.0)
+|   |   |   |   |   |   |   |   used_special_discount = No: 1 (4.0/1.0)
+|   |   |   |   |   feedback = User Friendly Website: 0 (7.0)
+|   |   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   |   gender = M
+|   |   |   |   |   |   |   |   joined_through_referral = No: 1 (5.0/1.0)
+|   |   |   |   |   |   |   |   joined_through_referral = Yes: 0 (2.0)
+|   |   |   |   |   |   |   gender = F: 0 (6.0/1.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (1.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   |   age <= 49: 0 (3.0/1.0)
+|   |   |   |   |   |   |   |   age > 49: 1 (3.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   |   |   past_complaint = No: 0 (5.0)
+|   |   |   |   |   |   |   |   past_complaint = Yes
+|   |   |   |   |   |   |   |   |   days_since_last_login <= 10: 1 (2.0)
+|   |   |   |   |   |   |   |   |   days_since_last_login > 10: 0 (2.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (22.0/5.0)
+|   |   |   |   |   feedback = Products always in Stock: 0 (3.0)
+|   |   |   |   |   feedback = Reasonable Price: 0 (4.0)
+|   |   |   |   avg_transaction_value > 48947.72: 0 (38.0/1.0)
+|   |   |   membership_category = Gold Membership
+|   |   |   |   feedback = Poor Website
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   medium_of_operation = Both
+|   |   |   |   |   |   |   avg_time_spent <= 420.02: 1 (2.0)
+|   |   |   |   |   |   |   avg_time_spent > 420.02: 0 (2.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone: 0 (2.0)
+|   |   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   |   age <= 58: 1 (7.0/1.0)
+|   |   |   |   |   |   |   age > 58: 0 (2.0)
+|   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   points_in_wallet <= 716.35: 1 (9.0/1.0)
+|   |   |   |   |   |   points_in_wallet > 716.35: 0 (4.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (18.0/5.0)
+|   |   |   |   feedback = Too many ads
+|   |   |   |   |   internet_option = Wi-Fi: 0 (11.0/2.0)
+|   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   medium_of_operation = Both: 0 (3.0/1.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   past_complaint = No
+|   |   |   |   |   |   |   |   avg_time_spent <= 178.36: 1 (3.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 178.36: 0 (3.0)
+|   |   |   |   |   |   |   past_complaint = Yes: 1 (5.0)
+|   |   |   |   |   |   medium_of_operation = Desktop: 0 (5.0/1.0)
+|   |   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   |   medium_of_operation = Both: 0 (3.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   age <= 23: 0 (2.0)
+|   |   |   |   |   |   |   age > 23: 1 (2.0)
+|   |   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   |   avg_transaction_value <= 33225.07
+|   |   |   |   |   |   |   |   avg_transaction_value <= 5432.49: 1 (2.0)
+|   |   |   |   |   |   |   |   avg_transaction_value > 5432.49: 0 (5.0)
+|   |   |   |   |   |   |   avg_transaction_value > 33225.07: 1 (4.0)
+|   |   |   |   feedback = Quality Customer Care: 0 (11.0)
+|   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   past_complaint = No
+|   |   |   |   |   |   |   medium_of_operation = Both: 1 (2.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone: 0 (5.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop: 0 (3.0/1.0)
+|   |   |   |   |   |   past_complaint = Yes: 1 (9.0/1.0)
+|   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   avg_transaction_value <= 16750.03: 1 (4.0/1.0)
+|   |   |   |   |   |   avg_transaction_value > 16750.03: 0 (13.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   past_complaint = No: 0 (4.0/1.0)
+|   |   |   |   |   |   past_complaint = Yes: 1 (9.0/1.0)
+|   |   |   |   feedback = No reason specified
+|   |   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   |   age <= 30
+|   |   |   |   |   |   |   joined_through_referral = No: 0 (3.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   |   avg_transaction_value <= 15761.31: 0 (2.0)
+|   |   |   |   |   |   |   |   avg_transaction_value > 15761.31: 1 (3.0)
+|   |   |   |   |   |   age > 30: 1 (8.0)
+|   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   avg_transaction_value <= 35665.46: 0 (14.0/3.0)
+|   |   |   |   |   |   avg_transaction_value > 35665.46: 1 (3.0)
+|   |   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   |   past_complaint = No
+|   |   |   |   |   |   |   joined_through_referral = No: 0 (5.0/1.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes: 1 (3.0)
+|   |   |   |   |   |   past_complaint = Yes: 0 (11.0/1.0)
+|   |   |   |   feedback = User Friendly Website: 0 (14.0)
+|   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (19.0/3.0)
+|   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   internet_option = Wi-Fi: 0 (1.0)
+|   |   |   |   |   |   |   internet_option = Mobile_Data: 1 (4.0/1.0)
+|   |   |   |   |   |   |   internet_option = Fiber_Optic: 0 (3.0)
+|   |   |   |   |   |   region_category = Village
+|   |   |   |   |   |   |   days_since_last_login <= 14: 0 (2.0)
+|   |   |   |   |   |   |   days_since_last_login > 14: 1 (3.0/1.0)
+|   |   |   |   |   |   region_category = Town: 1 (7.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   medium_of_operation = Both: 1 (4.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   internet_option = Wi-Fi: 0 (6.0)
+|   |   |   |   |   |   |   internet_option = Mobile_Data: 0 (2.0/1.0)
+|   |   |   |   |   |   |   internet_option = Fiber_Optic: 1 (3.0)
+|   |   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   |   avg_time_spent <= 70.62: 1 (4.0)
+|   |   |   |   |   |   |   avg_time_spent > 70.62: 0 (4.0/1.0)
+|   |   |   |   feedback = Products always in Stock: 0 (9.0)
+|   |   |   |   feedback = Reasonable Price: 0 (6.0)
+|   |   points_in_wallet > 719.94
+|   |   |   membership_category = No Membership: 1 (21.0)
+|   |   |   membership_category = Platinum Membership: 0 (1007.0)
+|   |   |   membership_category = Premium Membership: 0 (1074.0)
+|   |   |   membership_category = Basic Membership
+|   |   |   |   past_complaint = No
+|   |   |   |   |   age <= 20: 1 (2.0)
+|   |   |   |   |   age > 20: 0 (2.0)
+|   |   |   |   past_complaint = Yes: 1 (9.0)
+|   |   |   membership_category = Silver Membership: 0 (756.0/1.0)
+|   |   |   membership_category = Gold Membership: 0 (991.0/3.0)
+|   points_in_wallet > 852.982674
+|   |   membership_category = No Membership: 1 (207.0/3.0)
+|   |   membership_category = Platinum Membership: 0 (134.0)
+|   |   membership_category = Premium Membership: 0 (108.0)
+|   |   membership_category = Basic Membership: 1 (255.0/4.0)
+|   |   membership_category = Silver Membership
+|   |   |   points_in_wallet <= 956.195548: 1 (18.0/1.0)
+|   |   |   points_in_wallet > 956.195548
+|   |   |   |   feedback = Poor Website
+|   |   |   |   |   region_category = City: 1 (11.0/4.0)
+|   |   |   |   |   region_category = Village: 0 (3.0/1.0)
+|   |   |   |   |   region_category = Town
+|   |   |   |   |   |   days_since_last_login <= 18: 0 (10.0/1.0)
+|   |   |   |   |   |   days_since_last_login > 18: 1 (2.0)
+|   |   |   |   feedback = Too many ads
+|   |   |   |   |   points_in_wallet <= 1088.655073
+|   |   |   |   |   |   internet_option = Wi-Fi: 1 (4.0)
+|   |   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   |   joined_through_referral = No: 0 (2.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes: 1 (6.0/1.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   |   |   avg_transaction_value <= 41858.41: 1 (2.0)
+|   |   |   |   |   |   |   avg_transaction_value > 41858.41: 0 (2.0)
+|   |   |   |   |   points_in_wallet > 1088.655073: 0 (18.0/3.0)
+|   |   |   |   feedback = Quality Customer Care: 0 (7.0)
+|   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   past_complaint = No: 0 (6.0)
+|   |   |   |   |   |   past_complaint = Yes
+|   |   |   |   |   |   |   joined_through_referral = No: 1 (2.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes: 0 (4.0/1.0)
+|   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   avg_transaction_value <= 9341.33: 1 (2.0)
+|   |   |   |   |   |   |   avg_transaction_value > 9341.33: 0 (3.0)
+|   |   |   |   |   |   joined_through_referral = Yes: 1 (5.0)
+|   |   |   |   feedback = No reason specified
+|   |   |   |   |   age <= 18: 1 (6.0)
+|   |   |   |   |   age > 18
+|   |   |   |   |   |   used_special_discount = Yes
+|   |   |   |   |   |   |   age <= 47: 0 (5.0)
+|   |   |   |   |   |   |   age > 47
+|   |   |   |   |   |   |   |   avg_time_spent <= 60.63: 0 (2.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 60.63: 1 (6.0)
+|   |   |   |   |   |   used_special_discount = No: 0 (7.0)
+|   |   |   |   feedback = User Friendly Website: 0 (7.0)
+|   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   medium_of_operation = Both: 1 (1.0)
+|   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   internet_option = Wi-Fi: 0 (7.0)
+|   |   |   |   |   |   internet_option = Mobile_Data: 0 (4.0/1.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic: 1 (4.0/1.0)
+|   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   gender = M: 1 (4.0)
+|   |   |   |   |   |   gender = F
+|   |   |   |   |   |   |   avg_time_spent <= 245.58: 0 (7.0)
+|   |   |   |   |   |   |   avg_time_spent > 245.58: 1 (4.0/1.0)
+|   |   |   |   feedback = Products always in Stock: 0 (6.0)
+|   |   |   |   feedback = Reasonable Price: 0 (7.0)
+|   |   membership_category = Gold Membership
+|   |   |   points_in_wallet <= 995.77645: 1 (43.0/7.0)
+|   |   |   points_in_wallet > 995.77645
+|   |   |   |   avg_transaction_value <= 48440.63
+|   |   |   |   |   feedback = Poor Website
+|   |   |   |   |   |   age <= 15: 1 (4.0)
+|   |   |   |   |   |   age > 15: 0 (20.0/5.0)
+|   |   |   |   |   feedback = Too many ads
+|   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (1.0)
+|   |   |   |   |   |   |   preferred_offer_types = Without Offers: 1 (2.0)
+|   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   |   |   avg_time_spent <= 39.15: 1 (2.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 39.15: 0 (6.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 0 (8.0)
+|   |   |   |   |   feedback = Quality Customer Care: 0 (4.0)
+|   |   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   |   avg_time_spent <= 583.16
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (1.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone: 0 (5.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   |   |   age <= 52: 1 (4.0)
+|   |   |   |   |   |   |   |   age > 52: 0 (2.0)
+|   |   |   |   |   |   avg_time_spent > 583.16: 1 (5.0)
+|   |   |   |   |   feedback = No reason specified
+|   |   |   |   |   |   used_special_discount = Yes
+|   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (3.0)
+|   |   |   |   |   |   |   preferred_offer_types = Without Offers: 0 (4.0)
+|   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (1.0)
+|   |   |   |   |   |   used_special_discount = No: 0 (9.0)
+|   |   |   |   |   feedback = User Friendly Website: 0 (6.0)
+|   |   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   |   internet_option = Wi-Fi: 0 (5.0/1.0)
+|   |   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   |   avg_transaction_value <= 7593.98: 0 (2.0)
+|   |   |   |   |   |   |   avg_transaction_value > 7593.98: 1 (6.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic: 0 (6.0/1.0)
+|   |   |   |   |   feedback = Products always in Stock: 0 (4.0)
+|   |   |   |   |   feedback = Reasonable Price: 0 (2.0)
+|   |   |   |   avg_transaction_value > 48440.63: 0 (31.0)
+
+Number of Leaves  : 	259
+
+Size of the tree : 	414
+
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(numeric) age                           	--> 1 (numeric) age
+(nominal) gender                        	--> 2 (nominal) gender
+(nominal) region_category               	--> 3 (nominal) region_category
+(nominal) membership_category           	--> 4 (nominal) membership_category
+(nominal) joined_through_referral       	--> 5 (nominal) joined_through_referral
+(nominal) preferred_offer_types         	--> 6 (nominal) preferred_offer_types
+(nominal) medium_of_operation           	--> 7 (nominal) medium_of_operation
+(nominal) internet_option               	--> 8 (nominal) internet_option
+(numeric) days_since_last_login         	--> 9 (numeric) days_since_last_login
+(numeric) avg_time_spent                	--> 10 (numeric) avg_time_spent
+(numeric) avg_transaction_value         	--> 11 (numeric) avg_transaction_value
+(numeric) points_in_wallet              	--> 12 (numeric) points_in_wallet
+(nominal) used_special_discount         	--> 13 (nominal) used_special_discount
+(nominal) offer_application_preference  	--> 14 (nominal) offer_application_preference
+(nominal) past_complaint                	--> 15 (nominal) past_complaint
+(nominal) feedback                      	--> 16 (nominal) feedback
+(nominal) churn_risk_score              	--> 17 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.1 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.03 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5924               93.853  %
+Incorrectly Classified Instances       388                6.147  %
+Kappa statistic                          0.8762
+Mean absolute error                      0.0786
+Root mean squared error                  0.233 
+Relative absolute error                 15.8022 %
+Root relative squared error             46.7082 %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.916    0.042    0.950      0.916    0.933      0.877    0.945     0.937     0
+                 0.958    0.084    0.929      0.958    0.943      0.877    0.945     0.905     1
+Weighted Avg.    0.939    0.064    0.939      0.939    0.938      0.877    0.945     0.920     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2688  246 |    a = 0
+  142 3236 |    b = 1
+

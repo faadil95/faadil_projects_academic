@@ -1,0 +1,67 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.RandomForest -- -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R4,12,14-18
+Instances:    12250
+Attributes:   7
+              membership_category
+              points_in_wallet
+              offer_application_preference
+              past_complaint
+              complaint_status
+              feedback
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(nominal) membership_category           	--> 1 (nominal) membership_category
+(numeric) points_in_wallet              	--> 2 (numeric) points_in_wallet
+(nominal) offer_application_preference  	--> 3 (nominal) offer_application_preference
+(nominal) past_complaint                	--> 4 (nominal) past_complaint
+(nominal) complaint_status              	--> 5 (nominal) complaint_status
+(nominal) feedback                      	--> 6 (nominal) feedback
+(nominal) churn_risk_score              	--> 7 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.59 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.18 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5831               92.3796 %
+Incorrectly Classified Instances       481                7.6204 %
+Kappa statistic                          0.8467
+Mean absolute error                      0.0823
+Root mean squared error                  0.2329
+Relative absolute error                 16.5308 %
+Root relative squared error             46.6953 %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.913    0.067    0.922      0.913    0.918      0.847    0.971     0.975     0
+                 0.933    0.087    0.925      0.933    0.929      0.847    0.971     0.957     1
+Weighted Avg.    0.924    0.078    0.924      0.924    0.924      0.847    0.971     0.965     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2679  255 |    a = 0
+  226 3152 |    b = 1
+

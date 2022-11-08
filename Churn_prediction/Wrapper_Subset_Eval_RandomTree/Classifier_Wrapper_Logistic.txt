@@ -1,0 +1,121 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.functions.Logistic -- -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R4,12,14-18
+Instances:    12250
+Attributes:   7
+              membership_category
+              points_in_wallet
+              offer_application_preference
+              past_complaint
+              complaint_status
+              feedback
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                             Class
+Variable                                                         0
+==================================================================
+membership_category=No Membership                         -10.3131
+membership_category=Platinum Membership                    26.0959
+membership_category=Premium Membership                     24.5523
+membership_category=Basic Membership                      -10.3058
+membership_category=Silver Membership                      -6.9596
+membership_category=Gold Membership                        -6.9403
+points_in_wallet                                            0.0028
+offer_application_preference=Yes                             0.042
+past_complaint=Yes                                          -0.025
+complaint_status=Not Applicable                              0.025
+complaint_status=Unsolved                                   0.0578
+complaint_status=Solved                                     0.0402
+complaint_status=Solved in Follow-up                       -0.0953
+complaint_status=No Information Available                  -0.0582
+feedback=Poor Website                                      -3.7656
+feedback=Too many ads                                      -3.8041
+feedback=Quality Customer Care                             18.1989
+feedback=Poor Customer Service                             -3.8935
+feedback=No reason specified                               -3.8312
+feedback=User Friendly Website                             18.1583
+feedback=Poor Product Quality                              -3.8792
+feedback=Products always in Stock                          18.1238
+feedback=Reasonable Price                                  18.1351
+Intercept                                                   8.8942
+
+
+Odds Ratios...
+                                                             Class
+Variable                                                         0
+==================================================================
+membership_category=No Membership                                0
+membership_category=Platinum Membership      2.1543609484188815E11
+membership_category=Premium Membership        4.602015388283424E10
+membership_category=Basic Membership                             0
+membership_category=Silver Membership                       0.0009
+membership_category=Gold Membership                          0.001
+points_in_wallet                                            1.0028
+offer_application_preference=Yes                            1.0429
+past_complaint=Yes                                          0.9753
+complaint_status=Not Applicable                             1.0253
+complaint_status=Unsolved                                   1.0595
+complaint_status=Solved                                      1.041
+complaint_status=Solved in Follow-up                        0.9091
+complaint_status=No Information Available                   0.9435
+feedback=Poor Website                                       0.0232
+feedback=Too many ads                                       0.0223
+feedback=Quality Customer Care                       80106816.0937
+feedback=Poor Customer Service                              0.0204
+feedback=No reason specified                                0.0217
+feedback=User Friendly Website                       76922277.2314
+feedback=Poor Product Quality                               0.0207
+feedback=Products always in Stock                    74314558.2351
+feedback=Reasonable Price                            75154339.7959
+
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(nominal) membership_category           	--> 1 (nominal) membership_category
+(numeric) points_in_wallet              	--> 2 (numeric) points_in_wallet
+(nominal) offer_application_preference  	--> 3 (nominal) offer_application_preference
+(nominal) past_complaint                	--> 4 (nominal) past_complaint
+(nominal) complaint_status              	--> 5 (nominal) complaint_status
+(nominal) feedback                      	--> 6 (nominal) feedback
+(nominal) churn_risk_score              	--> 7 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.14 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.02 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5741               90.9537 %
+Incorrectly Classified Instances       571                9.0463 %
+Kappa statistic                          0.8187
+Mean absolute error                      0.1614
+Root mean squared error                  0.2849
+Relative absolute error                 32.4309 %
+Root relative squared error             57.1252 %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.924    0.103    0.886      0.924    0.905      0.819    0.962     0.966     0
+                 0.897    0.076    0.931      0.897    0.914      0.819    0.962     0.952     1
+Weighted Avg.    0.910    0.089    0.910      0.910    0.910      0.819    0.962     0.959     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2711  223 |    a = 0
+  348 3030 |    b = 1
+

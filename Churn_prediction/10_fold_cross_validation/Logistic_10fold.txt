@@ -1,0 +1,153 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     XY_10Fold_validation
+Instances:    18562
+Attributes:   18
+              age
+              gender
+              region_category
+              membership_category
+              joined_through_referral
+              preferred_offer_types
+              medium_of_operation
+              internet_option
+              days_since_last_login
+              avg_time_spent
+              avg_transaction_value
+              points_in_wallet
+              used_special_discount
+              offer_application_preference
+              past_complaint
+              complaint_status
+              feedback
+              churn_risk_score
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                         Class
+Variable                                                     0
+==============================================================
+age                                                     -0.001
+gender=F                                                -0.004
+region_category=City                                   -0.0229
+region_category=Village                                 0.0494
+region_category=Town                                   -0.0032
+membership_category=No Membership                       -6.752
+membership_category=Platinum Membership                15.2029
+membership_category=Premium Membership                 14.7353
+membership_category=Basic Membership                   -6.6693
+membership_category=Silver Membership                  -3.3726
+membership_category=Gold Membership                    -3.3456
+joined_through_referral=Yes                              -0.01
+preferred_offer_types=Gift Vouchers/Coupons             0.0215
+preferred_offer_types=Without Offers                   -0.0452
+preferred_offer_types=Credit/Debit Card Offers          0.0232
+medium_of_operation=Both                                0.0699
+medium_of_operation=Smartphone                         -0.0383
+medium_of_operation=Desktop                             0.0081
+internet_option=Wi-Fi                                   0.0554
+internet_option=Mobile_Data                            -0.0441
+internet_option=Fiber_Optic                            -0.0112
+days_since_last_login                                  -0.0001
+avg_time_spent                                         -0.0002
+avg_transaction_value                                       -0
+points_in_wallet                                        0.0025
+used_special_discount=No                               -0.0547
+offer_application_preference=Yes                        0.0921
+past_complaint=Yes                                     -0.0127
+complaint_status=Not Applicable                         0.0127
+complaint_status=Unsolved                               0.0716
+complaint_status=Solved                                 0.0253
+complaint_status=Solved in Follow-up                   -0.0828
+complaint_status=No Information Available              -0.0445
+feedback=Poor Website                                  -2.6116
+feedback=Too many ads                                  -2.6693
+feedback=Quality Customer Care                          12.787
+feedback=Poor Customer Service                         -2.7218
+feedback=No reason specified                           -2.6605
+feedback=User Friendly Website                         12.7465
+feedback=Poor Product Quality                          -2.7639
+feedback=Products always in Stock                      12.6528
+feedback=Reasonable Price                              12.6906
+Intercept                                               4.4908
+
+
+Odds Ratios...
+                                                         Class
+Variable                                                     0
+==============================================================
+age                                                      0.999
+gender=F                                                 0.996
+region_category=City                                    0.9774
+region_category=Village                                 1.0507
+region_category=Town                                    0.9968
+membership_category=No Membership                       0.0012
+membership_category=Platinum Membership           4004465.6006
+membership_category=Premium Membership            2508772.5189
+membership_category=Basic Membership                    0.0013
+membership_category=Silver Membership                   0.0343
+membership_category=Gold Membership                     0.0352
+joined_through_referral=Yes                               0.99
+preferred_offer_types=Gift Vouchers/Coupons             1.0218
+preferred_offer_types=Without Offers                    0.9558
+preferred_offer_types=Credit/Debit Card Offers          1.0234
+medium_of_operation=Both                                1.0724
+medium_of_operation=Smartphone                          0.9624
+medium_of_operation=Desktop                             1.0081
+internet_option=Wi-Fi                                    1.057
+internet_option=Mobile_Data                             0.9569
+internet_option=Fiber_Optic                             0.9889
+days_since_last_login                                   0.9999
+avg_time_spent                                          0.9998
+avg_transaction_value                                        1
+points_in_wallet                                        1.0025
+used_special_discount=No                                0.9468
+offer_application_preference=Yes                        1.0965
+past_complaint=Yes                                      0.9874
+complaint_status=Not Applicable                         1.0128
+complaint_status=Unsolved                               1.0742
+complaint_status=Solved                                 1.0256
+complaint_status=Solved in Follow-up                    0.9206
+complaint_status=No Information Available               0.9564
+feedback=Poor Website                                   0.0734
+feedback=Too many ads                                   0.0693
+feedback=Quality Customer Care                     357551.4222
+feedback=Poor Customer Service                          0.0658
+feedback=No reason specified                            0.0699
+feedback=User Friendly Website                     343332.2282
+feedback=Poor Product Quality                            0.063
+feedback=Products always in Stock                  312639.8372
+feedback=Reasonable Price                          324674.1541
+
+
+Time taken to build model: 0.42 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       16728               90.1196 %
+Incorrectly Classified Instances      1834                9.8804 %
+Kappa statistic                          0.8021
+Mean absolute error                      0.162 
+Root mean squared error                  0.2836
+Relative absolute error                 32.5523 %
+Root relative squared error             56.8588 %
+Total Number of Instances            18562     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.918    0.114    0.876      0.918    0.896      0.803    0.960     0.964     0
+                 0.886    0.082    0.926      0.886    0.906      0.803    0.960     0.951     1
+Weighted Avg.    0.901    0.097    0.902      0.901    0.901      0.803    0.960     0.957     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 7928  707 |    a = 0
+ 1127 8800 |    b = 1
+

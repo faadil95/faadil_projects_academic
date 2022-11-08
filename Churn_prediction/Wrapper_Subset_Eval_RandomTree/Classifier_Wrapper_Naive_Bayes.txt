@@ -1,0 +1,114 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.bayes.NaiveBayes
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R4,12,14-18
+Instances:    12250
+Attributes:   7
+              membership_category
+              points_in_wallet
+              offer_application_preference
+              past_complaint
+              complaint_status
+              feedback
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+Naive Bayes Classifier
+
+                                  Class
+Attribute                             0        1
+                                 (0.47)   (0.53)
+=================================================
+membership_category
+  No Membership                     84.0   2445.0
+  Platinum Membership             1452.0      1.0
+  Premium Membership              1501.0      1.0
+  Basic Membership                  86.0   2426.0
+  Silver Membership               1157.0    844.0
+  Gold Membership                 1427.0    838.0
+  [total]                         5707.0   6555.0
+
+points_in_wallet
+  mean                          754.4602 638.4545
+  std. dev.                     170.5946 180.1866
+  weight sum                        5701     6549
+  precision                       0.1705   0.1705
+
+offer_application_preference
+  No                              2479.0   3008.0
+  Yes                             3224.0   3543.0
+  [total]                         5703.0   6551.0
+
+past_complaint
+  No                              2892.0   3262.0
+  Yes                             2811.0   3289.0
+  [total]                         5703.0   6551.0
+
+complaint_status
+  Not Applicable                  2892.0   3262.0
+  Unsolved                         717.0    805.0
+  Solved                           691.0    822.0
+  Solved in Follow-up              722.0    844.0
+  No Information Available         684.0    821.0
+  [total]                         5706.0   6554.0
+
+feedback
+  Poor Website                     776.0   1312.0
+  Too many ads                     779.0   1285.0
+  Quality Customer Care            481.0      1.0
+  Poor Customer Service            743.0   1314.0
+  No reason specified              762.0   1304.0
+  User Friendly Website            483.0      1.0
+  Poor Product Quality             755.0   1339.0
+  Products always in Stock         460.0      1.0
+  Reasonable Price                 471.0      1.0
+  [total]                         5710.0   6558.0
+
+
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(nominal) membership_category           	--> 1 (nominal) membership_category
+(numeric) points_in_wallet              	--> 2 (numeric) points_in_wallet
+(nominal) offer_application_preference  	--> 3 (nominal) offer_application_preference
+(nominal) past_complaint                	--> 4 (nominal) past_complaint
+(nominal) complaint_status              	--> 5 (nominal) complaint_status
+(nominal) feedback                      	--> 6 (nominal) feedback
+(nominal) churn_risk_score              	--> 7 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.01 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.02 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5737               90.8904 %
+Incorrectly Classified Instances       575                9.1096 %
+Kappa statistic                          0.8173
+Mean absolute error                      0.1548
+Root mean squared error                  0.2844
+Relative absolute error                 31.1136 %
+Root relative squared error             57.0161 %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.919    0.100    0.889      0.919    0.904      0.818    0.961     0.965     0
+                 0.900    0.081    0.927      0.900    0.914      0.818    0.961     0.951     1
+Weighted Avg.    0.909    0.090    0.910      0.909    0.909      0.818    0.961     0.957     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2696  238 |    a = 0
+  337 3041 |    b = 1
+

@@ -1,0 +1,169 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.functions.Logistic -- -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R4,12,11,17,5-6,14,9,7,3,15-16,10,13,1,18
+Instances:    12250
+Attributes:   16
+              membership_category
+              points_in_wallet
+              avg_transaction_value
+              feedback
+              joined_through_referral
+              preferred_offer_types
+              offer_application_preference
+              days_since_last_login
+              medium_of_operation
+              region_category
+              past_complaint
+              complaint_status
+              avg_time_spent
+              used_special_discount
+              age
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                                 Class
+Variable                                                             0
+======================================================================
+membership_category=No Membership                             -10.5307
+membership_category=Platinum Membership                        34.5131
+membership_category=Premium Membership                         17.6043
+membership_category=Basic Membership                          -10.5236
+membership_category=Silver Membership                          -7.1725
+membership_category=Gold Membership                            -7.1537
+points_in_wallet                                                0.0028
+avg_transaction_value                                               -0
+feedback=Poor Website                                          -4.2703
+feedback=Too many ads                                          -4.3075
+feedback=Quality Customer Care                                  21.452
+feedback=Poor Customer Service                                 -4.3998
+feedback=No reason specified                                   -4.3269
+feedback=User Friendly Website                                 19.9543
+feedback=Poor Product Quality                                  -4.3816
+feedback=Products always in Stock                              20.4156
+feedback=Reasonable Price                                      20.3047
+joined_through_referral=Yes                                      -0.04
+preferred_offer_types=Gift Vouchers/Coupons                     0.0269
+preferred_offer_types=Without Offers                           -0.0394
+preferred_offer_types=Credit/Debit Card Offers                  0.0117
+offer_application_preference=Yes                               -0.0259
+days_since_last_login                                          -0.0049
+medium_of_operation=Both                                        0.0301
+medium_of_operation=Smartphone                                 -0.0326
+medium_of_operation=Desktop                                     0.0195
+region_category=City                                           -0.0246
+region_category=Village                                         0.0803
+region_category=Town                                           -0.0176
+past_complaint=Yes                                             -0.0239
+complaint_status=Not Applicable                                 0.0239
+complaint_status=Unsolved                                       0.0516
+complaint_status=Solved                                         0.0442
+complaint_status=Solved in Follow-up                           -0.0922
+complaint_status=No Information Available                      -0.0568
+avg_time_spent                                                 -0.0001
+used_special_discount=No                                        0.0881
+age                                                            -0.0021
+Intercept                                                        9.847
+
+
+Odds Ratios...
+                                                                 Class
+Variable                                                             0
+======================================================================
+membership_category=No Membership                                    0
+membership_category=Platinum Membership           9.746082312476579E14
+membership_category=Premium Membership                   44201370.9718
+membership_category=Basic Membership                                 0
+membership_category=Silver Membership                           0.0008
+membership_category=Gold Membership                             0.0008
+points_in_wallet                                                1.0028
+avg_transaction_value                                                1
+feedback=Poor Website                                            0.014
+feedback=Too many ads                                           0.0135
+feedback=Quality Customer Care                         2072516873.2213
+feedback=Poor Customer Service                                  0.0123
+feedback=No reason specified                                    0.0132
+feedback=User Friendly Website                          463507489.3992
+feedback=Poor Product Quality                                   0.0125
+feedback=Products always in Stock                       735125290.0895
+feedback=Reasonable Price                               657965980.3878
+joined_through_referral=Yes                                     0.9608
+preferred_offer_types=Gift Vouchers/Coupons                     1.0272
+preferred_offer_types=Without Offers                            0.9614
+preferred_offer_types=Credit/Debit Card Offers                  1.0118
+offer_application_preference=Yes                                0.9745
+days_since_last_login                                           0.9951
+medium_of_operation=Both                                        1.0306
+medium_of_operation=Smartphone                                  0.9679
+medium_of_operation=Desktop                                     1.0196
+region_category=City                                            0.9757
+region_category=Village                                         1.0836
+region_category=Town                                            0.9825
+past_complaint=Yes                                              0.9763
+complaint_status=Not Applicable                                 1.0242
+complaint_status=Unsolved                                        1.053
+complaint_status=Solved                                         1.0452
+complaint_status=Solved in Follow-up                            0.9119
+complaint_status=No Information Available                       0.9448
+avg_time_spent                                                  0.9999
+used_special_discount=No                                        1.0921
+age                                                             0.9979
+
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(nominal) membership_category           	--> 3 (nominal) membership_category
+(numeric) points_in_wallet              	--> 10 (numeric) points_in_wallet
+(numeric) avg_transaction_value         	--> 9 (numeric) avg_transaction_value
+(nominal) feedback                      	--> 15 (nominal) feedback
+(nominal) joined_through_referral       	--> 4 (nominal) joined_through_referral
+(nominal) preferred_offer_types         	--> 5 (nominal) preferred_offer_types
+(nominal) offer_application_preference  	--> 12 (nominal) offer_application_preference
+(numeric) days_since_last_login         	--> 7 (numeric) days_since_last_login
+(nominal) medium_of_operation           	--> 6 (nominal) medium_of_operation
+(nominal) region_category               	--> 2 (nominal) region_category
+(nominal) past_complaint                	--> 13 (nominal) past_complaint
+(nominal) complaint_status              	--> 14 (nominal) complaint_status
+(numeric) avg_time_spent                	--> 8 (numeric) avg_time_spent
+(nominal) used_special_discount         	--> 11 (nominal) used_special_discount
+(numeric) age                           	--> 1 (numeric) age
+(nominal) churn_risk_score              	--> 16 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.32 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.07 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5709               90.4468 %
+Incorrectly Classified Instances       603                9.5532 %
+Kappa statistic                          0.8084
+Mean absolute error                      0.1614
+Root mean squared error                  0.2852
+Relative absolute error                 32.4363 %
+Root relative squared error             57.1911 %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.914    0.104    0.884      0.914    0.899      0.809    0.960     0.963     0
+                 0.896    0.086    0.923      0.896    0.909      0.809    0.960     0.950     1
+Weighted Avg.    0.904    0.094    0.905      0.904    0.905      0.809    0.960     0.956     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2682  252 |    a = 0
+  351 3027 |    b = 1
+

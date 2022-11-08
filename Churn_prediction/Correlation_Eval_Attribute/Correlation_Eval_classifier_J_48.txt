@@ -1,0 +1,447 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.J48 -- -C 0.25 -M 2
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R4,12,11,17,5-6,14,9,7,3,15-16,10,13,1,18
+Instances:    12250
+Attributes:   16
+              membership_category
+              points_in_wallet
+              avg_transaction_value
+              feedback
+              joined_through_referral
+              preferred_offer_types
+              offer_application_preference
+              days_since_last_login
+              medium_of_operation
+              region_category
+              past_complaint
+              complaint_status
+              avg_time_spent
+              used_special_discount
+              age
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+J48 pruned tree
+------------------
+
+points_in_wallet <= 700.05
+|   avg_transaction_value <= 50104.37
+|   |   points_in_wallet <= 499.434734
+|   |   |   membership_category = No Membership: 1 (201.0/7.0)
+|   |   |   membership_category = Platinum Membership: 0 (102.0)
+|   |   |   membership_category = Premium Membership: 0 (91.0)
+|   |   |   membership_category = Basic Membership: 1 (205.0/2.0)
+|   |   |   membership_category = Silver Membership
+|   |   |   |   points_in_wallet <= 422.427581
+|   |   |   |   |   feedback = Poor Website: 1 (23.0/7.0)
+|   |   |   |   |   feedback = Too many ads
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   complaint_status = Not Applicable: 0 (4.0)
+|   |   |   |   |   |   |   complaint_status = Unsolved: 0 (1.0)
+|   |   |   |   |   |   |   complaint_status = Solved: 1 (2.0)
+|   |   |   |   |   |   |   complaint_status = Solved in Follow-up: 0 (0.0)
+|   |   |   |   |   |   |   complaint_status = No Information Available: 0 (0.0)
+|   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   region_category = Town: 1 (5.0)
+|   |   |   |   |   feedback = Quality Customer Care: 0 (3.0)
+|   |   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   |   medium_of_operation = Both: 1 (4.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   points_in_wallet <= 354.587632: 1 (7.0/1.0)
+|   |   |   |   |   |   |   points_in_wallet > 354.587632: 0 (4.0)
+|   |   |   |   |   |   medium_of_operation = Desktop: 1 (12.0/1.0)
+|   |   |   |   |   feedback = No reason specified
+|   |   |   |   |   |   points_in_wallet <= 289.957478: 1 (3.0)
+|   |   |   |   |   |   points_in_wallet > 289.957478: 0 (9.0/1.0)
+|   |   |   |   |   feedback = User Friendly Website: 0 (2.0)
+|   |   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   |   age <= 46: 1 (19.0/2.0)
+|   |   |   |   |   |   age > 46: 0 (7.0/2.0)
+|   |   |   |   |   feedback = Products always in Stock: 0 (2.0)
+|   |   |   |   |   feedback = Reasonable Price: 0 (2.0)
+|   |   |   |   points_in_wallet > 422.427581: 0 (21.0)
+|   |   |   membership_category = Gold Membership
+|   |   |   |   points_in_wallet <= 329.796825
+|   |   |   |   |   feedback = Poor Website
+|   |   |   |   |   |   used_special_discount = Yes: 1 (8.0)
+|   |   |   |   |   |   used_special_discount = No
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (1.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone: 0 (2.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop: 1 (4.0)
+|   |   |   |   |   feedback = Too many ads: 1 (8.0/2.0)
+|   |   |   |   |   feedback = Quality Customer Care: 0 (3.0)
+|   |   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   |   joined_through_referral = No: 1 (8.0/1.0)
+|   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   points_in_wallet <= 274.765397: 0 (3.0)
+|   |   |   |   |   |   |   points_in_wallet > 274.765397: 1 (4.0/1.0)
+|   |   |   |   |   feedback = No reason specified: 1 (9.0/3.0)
+|   |   |   |   |   feedback = User Friendly Website: 1 (0.0)
+|   |   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   |   past_complaint = No: 1 (11.0/1.0)
+|   |   |   |   |   |   past_complaint = Yes: 0 (5.0/1.0)
+|   |   |   |   |   feedback = Products always in Stock: 0 (1.0)
+|   |   |   |   |   feedback = Reasonable Price: 0 (2.0)
+|   |   |   |   points_in_wallet > 329.796825: 0 (72.0/20.0)
+|   |   points_in_wallet > 499.434734
+|   |   |   membership_category = No Membership: 1 (1986.0/71.0)
+|   |   |   membership_category = Platinum Membership: 0 (17.0)
+|   |   |   membership_category = Premium Membership: 0 (15.0)
+|   |   |   membership_category = Basic Membership: 1 (1933.0/76.0)
+|   |   |   membership_category = Silver Membership
+|   |   |   |   points_in_wallet <= 604.01
+|   |   |   |   |   points_in_wallet <= 565.77: 0 (7.0)
+|   |   |   |   |   points_in_wallet > 565.77: 1 (18.0)
+|   |   |   |   points_in_wallet > 604.01: 1 (566.0/17.0)
+|   |   |   membership_category = Gold Membership
+|   |   |   |   points_in_wallet <= 602.56
+|   |   |   |   |   points_in_wallet <= 599.36: 0 (17.0/4.0)
+|   |   |   |   |   points_in_wallet > 599.36
+|   |   |   |   |   |   points_in_wallet <= 601.61: 1 (11.0)
+|   |   |   |   |   |   points_in_wallet > 601.61
+|   |   |   |   |   |   |   avg_transaction_value <= 38195.82: 0 (3.0)
+|   |   |   |   |   |   |   avg_transaction_value > 38195.82: 1 (2.0)
+|   |   |   |   points_in_wallet > 602.56: 1 (591.0/22.0)
+|   avg_transaction_value > 50104.37: 0 (86.0)
+points_in_wallet > 700.05
+|   points_in_wallet <= 852.982674
+|   |   points_in_wallet <= 719.94
+|   |   |   membership_category = No Membership: 1 (112.0/2.0)
+|   |   |   membership_category = Platinum Membership: 0 (163.0)
+|   |   |   membership_category = Premium Membership: 0 (184.0)
+|   |   |   membership_category = Basic Membership: 1 (104.0/1.0)
+|   |   |   membership_category = Silver Membership
+|   |   |   |   avg_transaction_value <= 48947.72
+|   |   |   |   |   feedback = Poor Website
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   |   |   points_in_wallet <= 714.9: 1 (6.0)
+|   |   |   |   |   |   |   |   points_in_wallet > 714.9: 0 (6.0/2.0)
+|   |   |   |   |   |   |   complaint_status = Unsolved: 0 (3.0)
+|   |   |   |   |   |   |   complaint_status = Solved: 1 (2.0)
+|   |   |   |   |   |   |   complaint_status = Solved in Follow-up: 1 (5.0)
+|   |   |   |   |   |   |   complaint_status = No Information Available: 1 (0.0)
+|   |   |   |   |   |   region_category = Village
+|   |   |   |   |   |   |   offer_application_preference = No: 1 (4.0/1.0)
+|   |   |   |   |   |   |   offer_application_preference = Yes: 0 (8.0/1.0)
+|   |   |   |   |   |   region_category = Town
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (4.0/2.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   |   avg_transaction_value <= 19184.64: 1 (5.0)
+|   |   |   |   |   |   |   |   avg_transaction_value > 19184.64: 0 (7.0/2.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop: 0 (10.0/3.0)
+|   |   |   |   |   feedback = Too many ads
+|   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   |   points_in_wallet <= 717.15: 1 (4.0)
+|   |   |   |   |   |   |   |   points_in_wallet > 717.15: 0 (2.0)
+|   |   |   |   |   |   |   region_category = Village: 1 (2.0)
+|   |   |   |   |   |   |   region_category = Town
+|   |   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   |   |   |   offer_application_preference = No: 0 (3.0)
+|   |   |   |   |   |   |   |   |   offer_application_preference = Yes: 1 (5.0/1.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Without Offers: 0 (5.0/1.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   |   |   |   medium_of_operation = Both: 1 (0.0)
+|   |   |   |   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   |   |   |   days_since_last_login <= 12: 1 (3.0)
+|   |   |   |   |   |   |   |   |   |   days_since_last_login > 12: 0 (2.0)
+|   |   |   |   |   |   |   |   |   medium_of_operation = Desktop: 1 (3.0)
+|   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   past_complaint = No: 0 (16.0/1.0)
+|   |   |   |   |   |   |   past_complaint = Yes
+|   |   |   |   |   |   |   |   region_category = City: 1 (6.0/1.0)
+|   |   |   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   |   |   region_category = Town
+|   |   |   |   |   |   |   |   |   days_since_last_login <= 12: 0 (3.0)
+|   |   |   |   |   |   |   |   |   days_since_last_login > 12: 1 (2.0)
+|   |   |   |   |   feedback = Quality Customer Care: 0 (3.0)
+|   |   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   |   avg_transaction_value <= 10317.51
+|   |   |   |   |   |   |   |   |   days_since_last_login <= 12: 0 (3.0/1.0)
+|   |   |   |   |   |   |   |   |   days_since_last_login > 12: 1 (2.0)
+|   |   |   |   |   |   |   |   avg_transaction_value > 10317.51: 0 (12.0)
+|   |   |   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (6.0/1.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   |   |   |   avg_transaction_value <= 24884.35: 0 (4.0)
+|   |   |   |   |   |   |   |   |   avg_transaction_value > 24884.35: 1 (2.0)
+|   |   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (5.0/1.0)
+|   |   |   |   |   |   complaint_status = Unsolved: 0 (3.0)
+|   |   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   |   offer_application_preference = No: 1 (3.0/1.0)
+|   |   |   |   |   |   |   offer_application_preference = Yes: 0 (2.0)
+|   |   |   |   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   |   |   |   days_since_last_login <= 10: 0 (3.0)
+|   |   |   |   |   |   |   days_since_last_login > 10: 1 (3.0)
+|   |   |   |   |   |   complaint_status = No Information Available
+|   |   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   |   medium_of_operation = Both: 1 (0.0)
+|   |   |   |   |   |   |   |   medium_of_operation = Smartphone: 1 (2.0)
+|   |   |   |   |   |   |   |   medium_of_operation = Desktop: 0 (3.0/1.0)
+|   |   |   |   |   |   |   offer_application_preference = Yes: 0 (2.0)
+|   |   |   |   |   feedback = No reason specified
+|   |   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   |   avg_transaction_value <= 34145.8: 0 (10.0/2.0)
+|   |   |   |   |   |   |   |   avg_transaction_value > 34145.8: 1 (3.0)
+|   |   |   |   |   |   |   offer_application_preference = Yes: 0 (9.0/2.0)
+|   |   |   |   |   |   complaint_status = Unsolved
+|   |   |   |   |   |   |   region_category = City: 1 (3.0)
+|   |   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   |   region_category = Town: 0 (2.0)
+|   |   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   |   offer_application_preference = No: 0 (3.0)
+|   |   |   |   |   |   |   offer_application_preference = Yes: 1 (3.0)
+|   |   |   |   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (1.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   |   avg_time_spent <= 207.93: 0 (2.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 207.93: 1 (3.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop: 1 (4.0)
+|   |   |   |   |   |   complaint_status = No Information Available
+|   |   |   |   |   |   |   joined_through_referral = No: 0 (5.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   |   avg_transaction_value <= 25557.83: 1 (2.0)
+|   |   |   |   |   |   |   |   avg_transaction_value > 25557.83: 0 (2.0)
+|   |   |   |   |   feedback = User Friendly Website: 0 (7.0)
+|   |   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   |   complaint_status = Not Applicable: 0 (5.0/1.0)
+|   |   |   |   |   |   |   complaint_status = Unsolved: 1 (2.0)
+|   |   |   |   |   |   |   complaint_status = Solved: 0 (3.0)
+|   |   |   |   |   |   |   complaint_status = Solved in Follow-up: 1 (2.0)
+|   |   |   |   |   |   |   complaint_status = No Information Available: 0 (1.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (1.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   |   age <= 49: 0 (3.0/1.0)
+|   |   |   |   |   |   |   |   age > 49: 1 (3.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop: 0 (9.0/2.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   |   age <= 34
+|   |   |   |   |   |   |   |   points_in_wallet <= 710.13: 1 (6.0/1.0)
+|   |   |   |   |   |   |   |   points_in_wallet > 710.13: 0 (3.0)
+|   |   |   |   |   |   |   age > 34: 1 (13.0/1.0)
+|   |   |   |   |   feedback = Products always in Stock: 0 (3.0)
+|   |   |   |   |   feedback = Reasonable Price: 0 (4.0)
+|   |   |   |   avg_transaction_value > 48947.72: 0 (38.0/1.0)
+|   |   |   membership_category = Gold Membership
+|   |   |   |   feedback = Poor Website
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   complaint_status = Not Applicable: 1 (5.0/1.0)
+|   |   |   |   |   |   complaint_status = Unsolved: 0 (2.0)
+|   |   |   |   |   |   complaint_status = Solved: 0 (3.0/1.0)
+|   |   |   |   |   |   complaint_status = Solved in Follow-up: 1 (2.0)
+|   |   |   |   |   |   complaint_status = No Information Available: 0 (3.0/1.0)
+|   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   points_in_wallet <= 716.35: 1 (9.0/1.0)
+|   |   |   |   |   |   points_in_wallet > 716.35: 0 (4.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   medium_of_operation = Both: 0 (2.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   avg_time_spent <= 88.52: 0 (2.0)
+|   |   |   |   |   |   |   avg_time_spent > 88.52: 1 (5.0/1.0)
+|   |   |   |   |   |   medium_of_operation = Desktop: 0 (9.0/1.0)
+|   |   |   |   feedback = Too many ads
+|   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   points_in_wallet <= 711.38: 0 (15.0/2.0)
+|   |   |   |   |   |   points_in_wallet > 711.38: 1 (10.0/2.0)
+|   |   |   |   |   complaint_status = Unsolved
+|   |   |   |   |   |   joined_through_referral = No: 1 (4.0)
+|   |   |   |   |   |   joined_through_referral = Yes: 0 (3.0/1.0)
+|   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   avg_transaction_value <= 30087.08: 0 (3.0)
+|   |   |   |   |   |   avg_transaction_value > 30087.08: 1 (2.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 0 (5.0)
+|   |   |   |   |   complaint_status = No Information Available
+|   |   |   |   |   |   joined_through_referral = No: 0 (4.0/1.0)
+|   |   |   |   |   |   joined_through_referral = Yes: 1 (2.0)
+|   |   |   |   feedback = Quality Customer Care: 0 (11.0)
+|   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   past_complaint = No
+|   |   |   |   |   |   |   medium_of_operation = Both: 1 (2.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone: 0 (5.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop: 0 (3.0/1.0)
+|   |   |   |   |   |   past_complaint = Yes: 1 (9.0/1.0)
+|   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   avg_transaction_value <= 16750.03: 1 (4.0/1.0)
+|   |   |   |   |   |   avg_transaction_value > 16750.03: 0 (13.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   past_complaint = No: 0 (4.0/1.0)
+|   |   |   |   |   |   past_complaint = Yes: 1 (9.0/1.0)
+|   |   |   |   feedback = No reason specified
+|   |   |   |   |   joined_through_referral = No: 0 (22.0/6.0)
+|   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   past_complaint = No
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (2.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   |   avg_transaction_value <= 25628.32: 0 (2.0)
+|   |   |   |   |   |   |   |   avg_transaction_value > 25628.32: 1 (6.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop: 1 (9.0/2.0)
+|   |   |   |   |   |   past_complaint = Yes
+|   |   |   |   |   |   |   avg_time_spent <= 120.23: 0 (7.0)
+|   |   |   |   |   |   |   avg_time_spent > 120.23: 1 (4.0/1.0)
+|   |   |   |   feedback = User Friendly Website: 0 (14.0)
+|   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (19.0/3.0)
+|   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   days_since_last_login <= 14: 0 (6.0/1.0)
+|   |   |   |   |   |   |   days_since_last_login > 14: 1 (2.0)
+|   |   |   |   |   |   region_category = Village
+|   |   |   |   |   |   |   days_since_last_login <= 14: 0 (2.0)
+|   |   |   |   |   |   |   days_since_last_login > 14: 1 (3.0/1.0)
+|   |   |   |   |   |   region_category = Town: 1 (7.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   medium_of_operation = Both: 1 (4.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone: 0 (11.0/4.0)
+|   |   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   |   avg_time_spent <= 70.62: 1 (4.0)
+|   |   |   |   |   |   |   avg_time_spent > 70.62: 0 (4.0/1.0)
+|   |   |   |   feedback = Products always in Stock: 0 (9.0)
+|   |   |   |   feedback = Reasonable Price: 0 (6.0)
+|   |   points_in_wallet > 719.94
+|   |   |   membership_category = No Membership: 1 (21.0)
+|   |   |   membership_category = Platinum Membership: 0 (1007.0)
+|   |   |   membership_category = Premium Membership: 0 (1074.0)
+|   |   |   membership_category = Basic Membership
+|   |   |   |   past_complaint = No
+|   |   |   |   |   points_in_wallet <= 816.37: 1 (2.0)
+|   |   |   |   |   points_in_wallet > 816.37: 0 (2.0)
+|   |   |   |   past_complaint = Yes: 1 (9.0)
+|   |   |   membership_category = Silver Membership: 0 (756.0/1.0)
+|   |   |   membership_category = Gold Membership: 0 (991.0/3.0)
+|   points_in_wallet > 852.982674
+|   |   membership_category = No Membership: 1 (207.0/3.0)
+|   |   membership_category = Platinum Membership: 0 (134.0)
+|   |   membership_category = Premium Membership: 0 (108.0)
+|   |   membership_category = Basic Membership: 1 (255.0/4.0)
+|   |   membership_category = Silver Membership
+|   |   |   points_in_wallet <= 956.195548: 1 (18.0/1.0)
+|   |   |   points_in_wallet > 956.195548
+|   |   |   |   feedback = Poor Website
+|   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   used_special_discount = Yes
+|   |   |   |   |   |   |   medium_of_operation = Both: 1 (2.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone: 0 (3.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop: 1 (4.0/1.0)
+|   |   |   |   |   |   used_special_discount = No: 0 (5.0)
+|   |   |   |   |   complaint_status = Unsolved: 0 (3.0)
+|   |   |   |   |   complaint_status = Solved: 1 (4.0/1.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 1 (4.0/1.0)
+|   |   |   |   |   complaint_status = No Information Available: 0 (1.0)
+|   |   |   |   feedback = Too many ads
+|   |   |   |   |   points_in_wallet <= 1088.655073
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   avg_time_spent <= 103.41: 0 (3.0)
+|   |   |   |   |   |   |   avg_time_spent > 103.41: 1 (3.0)
+|   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   region_category = Town
+|   |   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   |   past_complaint = No: 0 (2.0)
+|   |   |   |   |   |   |   |   past_complaint = Yes: 1 (3.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes: 1 (4.0)
+|   |   |   |   |   points_in_wallet > 1088.655073: 0 (18.0/3.0)
+|   |   |   |   feedback = Quality Customer Care: 0 (7.0)
+|   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   avg_time_spent <= 227.12: 0 (7.0)
+|   |   |   |   |   |   avg_time_spent > 227.12: 1 (2.0)
+|   |   |   |   |   complaint_status = Unsolved: 1 (3.0/1.0)
+|   |   |   |   |   complaint_status = Solved: 0 (0.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 0 (4.0)
+|   |   |   |   |   complaint_status = No Information Available: 1 (6.0)
+|   |   |   |   feedback = No reason specified
+|   |   |   |   |   age <= 18: 1 (6.0)
+|   |   |   |   |   age > 18
+|   |   |   |   |   |   used_special_discount = Yes
+|   |   |   |   |   |   |   age <= 47: 0 (5.0)
+|   |   |   |   |   |   |   age > 47
+|   |   |   |   |   |   |   |   avg_time_spent <= 60.63: 0 (2.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 60.63: 1 (6.0)
+|   |   |   |   |   |   used_special_discount = No: 0 (7.0)
+|   |   |   |   feedback = User Friendly Website: 0 (7.0)
+|   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   age <= 16: 0 (4.0)
+|   |   |   |   |   |   age > 16
+|   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (3.0)
+|   |   |   |   |   |   |   preferred_offer_types = Without Offers: 1 (4.0)
+|   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (2.0)
+|   |   |   |   |   complaint_status = Unsolved: 0 (6.0/1.0)
+|   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   joined_through_referral = No: 0 (3.0/1.0)
+|   |   |   |   |   |   joined_through_referral = Yes: 1 (2.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 0 (4.0)
+|   |   |   |   |   complaint_status = No Information Available: 0 (3.0/1.0)
+|   |   |   |   feedback = Products always in Stock: 0 (6.0)
+|   |   |   |   feedback = Reasonable Price: 0 (7.0)
+|   |   membership_category = Gold Membership
+|   |   |   points_in_wallet <= 995.77645: 1 (43.0/7.0)
+|   |   |   points_in_wallet > 995.77645: 0 (143.0/33.0)
+
+Number of Leaves  : 	236
+
+Size of the tree : 	360
+
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(nominal) membership_category           	--> 3 (nominal) membership_category
+(numeric) points_in_wallet              	--> 10 (numeric) points_in_wallet
+(numeric) avg_transaction_value         	--> 9 (numeric) avg_transaction_value
+(nominal) feedback                      	--> 15 (nominal) feedback
+(nominal) joined_through_referral       	--> 4 (nominal) joined_through_referral
+(nominal) preferred_offer_types         	--> 5 (nominal) preferred_offer_types
+(nominal) offer_application_preference  	--> 12 (nominal) offer_application_preference
+(numeric) days_since_last_login         	--> 7 (numeric) days_since_last_login
+(nominal) medium_of_operation           	--> 6 (nominal) medium_of_operation
+(nominal) region_category               	--> 2 (nominal) region_category
+(nominal) past_complaint                	--> 13 (nominal) past_complaint
+(nominal) complaint_status              	--> 14 (nominal) complaint_status
+(numeric) avg_time_spent                	--> 8 (numeric) avg_time_spent
+(nominal) used_special_discount         	--> 11 (nominal) used_special_discount
+(numeric) age                           	--> 1 (numeric) age
+(nominal) churn_risk_score              	--> 16 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.09 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.06 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5945               94.1857 %
+Incorrectly Classified Instances       367                5.8143 %
+Kappa statistic                          0.883 
+Mean absolute error                      0.0763
+Root mean squared error                  0.2223
+Relative absolute error                 15.3253 %
+Root relative squared error             44.5651 %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.926    0.044    0.948      0.926    0.937      0.883    0.954     0.950     0
+                 0.956    0.074    0.937      0.956    0.946      0.883    0.954     0.919     1
+Weighted Avg.    0.942    0.060    0.942      0.942    0.942      0.883    0.954     0.934     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2717  217 |    a = 0
+  150 3228 |    b = 1
+

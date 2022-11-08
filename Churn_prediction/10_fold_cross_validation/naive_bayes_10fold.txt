@@ -1,0 +1,171 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     XY_10Fold_validation
+Instances:    18562
+Attributes:   18
+              age
+              gender
+              region_category
+              membership_category
+              joined_through_referral
+              preferred_offer_types
+              medium_of_operation
+              internet_option
+              days_since_last_login
+              avg_time_spent
+              avg_transaction_value
+              points_in_wallet
+              used_special_discount
+              offer_application_preference
+              past_complaint
+              complaint_status
+              feedback
+              churn_risk_score
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                                    Class
+Attribute                               0          1
+                                   (0.47)     (0.53)
+=====================================================
+age
+  mean                             36.8917    36.9286
+  std. dev.                        15.9526     15.844
+  weight sum                          8635       9927
+  precision                              1          1
+
+gender
+  M                                 4309.0     4925.0
+  F                                 4328.0     5004.0
+  [total]                           8637.0     9929.0
+
+region_category
+  City                              3427.0     4053.0
+  Village                           1376.0     1406.0
+  Town                              3835.0     4471.0
+  [total]                           8638.0     9930.0
+
+membership_category
+  No Membership                      122.0     3677.0
+  Platinum Membership               2211.0        1.0
+  Premium Membership                2245.0        1.0
+  Basic Membership                   137.0     3722.0
+  Silver Membership                 1765.0     1283.0
+  Gold Membership                   2161.0     1249.0
+  [total]                           8641.0     9933.0
+
+joined_through_referral
+  No                                4479.0     4839.0
+  Yes                               4158.0     5090.0
+  [total]                           8637.0     9929.0
+
+preferred_offer_types
+  Gift Vouchers/Coupons             3046.0     3188.0
+  Without Offers                    2645.0     3443.0
+  Credit/Debit Card Offers          2947.0     3299.0
+  [total]                           8638.0     9930.0
+
+medium_of_operation
+  Both                              1127.0     1126.0
+  Smartphone                        3672.0     4525.0
+  Desktop                           3839.0     4279.0
+  [total]                           8638.0     9930.0
+
+internet_option
+  Wi-Fi                             2900.0     3267.0
+  Mobile_Data                       2876.0     3320.0
+  Fiber_Optic                       2862.0     3343.0
+  [total]                           8638.0     9930.0
+
+days_since_last_login
+  mean                              12.679    12.9072
+  std. dev.                         5.6236     5.5402
+  weight sum                          8635       9927
+  precision                              1          1
+
+avg_time_spent
+  mean                             296.962   290.5635
+  std. dev.                       332.3234   339.0746
+  weight sum                          8635       9927
+  precision                           0.21       0.21
+
+avg_transaction_value
+  mean                          33960.4142 25388.3578
+  std. dev.                     23509.5449 14206.7498
+  weight sum                          8635       9927
+  precision                         5.3477     5.3477
+
+points_in_wallet
+  mean                            753.4786   637.3206
+  std. dev.                       171.5404   179.1327
+  weight sum                          8635       9927
+  precision                         0.1372     0.1372
+
+used_special_discount
+  Yes                               4789.0     5432.0
+  No                                3848.0     4497.0
+  [total]                           8637.0     9929.0
+
+offer_application_preference
+  No                                3779.0     4576.0
+  Yes                               4858.0     5353.0
+  [total]                           8637.0     9929.0
+
+past_complaint
+  No                                4345.0     4940.0
+  Yes                               4292.0     4989.0
+  [total]                           8637.0     9929.0
+
+complaint_status
+  Not Applicable                    4345.0     4940.0
+  Unsolved                          1090.0     1230.0
+  Solved                            1091.0     1287.0
+  Solved in Follow-up               1063.0     1253.0
+  No Information Available          1051.0     1222.0
+  [total]                           8640.0     9932.0
+
+feedback
+  Poor Website                      1213.0     1984.0
+  Too many ads                      1162.0     1961.0
+  Quality Customer Care              701.0        1.0
+  Poor Customer Service             1134.0     1992.0
+  No reason specified               1153.0     1974.0
+  User Friendly Website              736.0        1.0
+  Poor Product Quality              1114.0     2021.0
+  Products always in Stock           703.0        1.0
+  Reasonable Price                   728.0        1.0
+  [total]                           8644.0     9936.0
+
+
+
+Time taken to build model: 0.02 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       16100               86.7363 %
+Incorrectly Classified Instances      2462               13.2637 %
+Kappa statistic                          0.7312
+Mean absolute error                      0.1541
+Root mean squared error                  0.2877
+Relative absolute error                 30.9601 %
+Root relative squared error             57.6785 %
+Total Number of Instances            18562     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.794    0.069    0.909      0.794    0.848      0.736    0.953     0.956     0
+                 0.931    0.206    0.839      0.931    0.882      0.736    0.953     0.947     1
+Weighted Avg.    0.867    0.142    0.872      0.867    0.866      0.736    0.953     0.951     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 6857 1778 |    a = 0
+  684 9243 |    b = 1
+

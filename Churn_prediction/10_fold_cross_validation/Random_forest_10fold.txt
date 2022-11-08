@@ -1,0 +1,61 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     XY_10Fold_validation
+Instances:    18562
+Attributes:   18
+              age
+              gender
+              region_category
+              membership_category
+              joined_through_referral
+              preferred_offer_types
+              medium_of_operation
+              internet_option
+              days_since_last_login
+              avg_time_spent
+              avg_transaction_value
+              points_in_wallet
+              used_special_discount
+              offer_application_preference
+              past_complaint
+              complaint_status
+              feedback
+              churn_risk_score
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 1.72 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       17467               94.1009 %
+Incorrectly Classified Instances      1095                5.8991 %
+Kappa statistic                          0.8814
+Mean absolute error                      0.1049
+Root mean squared error                  0.2104
+Relative absolute error                 21.0854 %
+Root relative squared error             42.1912 %
+Total Number of Instances            18562     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.931    0.051    0.941      0.931    0.936      0.881    0.976     0.981     0
+                 0.949    0.069    0.941      0.949    0.945      0.881    0.976     0.962     1
+Weighted Avg.    0.941    0.060    0.941      0.941    0.941      0.881    0.976     0.971     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 8042  593 |    a = 0
+  502 9425 |    b = 1
+

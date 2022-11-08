@@ -1,0 +1,298 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.J48 -- -C 0.25 -M 2
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R4,12,14-18
+Instances:    12250
+Attributes:   7
+              membership_category
+              points_in_wallet
+              offer_application_preference
+              past_complaint
+              complaint_status
+              feedback
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+J48 pruned tree
+------------------
+
+points_in_wallet <= 700.05
+|   points_in_wallet <= 499.434734
+|   |   membership_category = No Membership: 1 (201.0/7.0)
+|   |   membership_category = Platinum Membership: 0 (123.0)
+|   |   membership_category = Premium Membership: 0 (117.0)
+|   |   membership_category = Basic Membership: 1 (205.0/2.0)
+|   |   membership_category = Silver Membership
+|   |   |   points_in_wallet <= 422.427581
+|   |   |   |   feedback = Poor Website: 1 (23.0/7.0)
+|   |   |   |   feedback = Too many ads: 1 (13.0/5.0)
+|   |   |   |   feedback = Quality Customer Care: 0 (3.0)
+|   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   points_in_wallet <= 354.587632: 1 (21.0/2.0)
+|   |   |   |   |   points_in_wallet > 354.587632: 0 (6.0/2.0)
+|   |   |   |   feedback = No reason specified
+|   |   |   |   |   points_in_wallet <= 289.957478: 1 (3.0)
+|   |   |   |   |   points_in_wallet > 289.957478: 0 (9.0/1.0)
+|   |   |   |   feedback = User Friendly Website: 0 (4.0)
+|   |   |   |   feedback = Poor Product Quality: 1 (26.0/7.0)
+|   |   |   |   feedback = Products always in Stock: 0 (3.0)
+|   |   |   |   feedback = Reasonable Price: 0 (3.0)
+|   |   |   points_in_wallet > 422.427581: 0 (23.0)
+|   |   membership_category = Gold Membership
+|   |   |   feedback = Poor Website
+|   |   |   |   points_in_wallet <= 424.860772: 1 (21.0/6.0)
+|   |   |   |   points_in_wallet > 424.860772: 0 (6.0)
+|   |   |   feedback = Too many ads
+|   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   offer_application_preference = No: 0 (3.0/1.0)
+|   |   |   |   |   offer_application_preference = Yes: 1 (4.0/1.0)
+|   |   |   |   complaint_status = Unsolved: 1 (1.0)
+|   |   |   |   complaint_status = Solved: 0 (3.0)
+|   |   |   |   complaint_status = Solved in Follow-up: 0 (1.0)
+|   |   |   |   complaint_status = No Information Available: 1 (4.0)
+|   |   |   feedback = Quality Customer Care: 0 (10.0)
+|   |   |   feedback = Poor Customer Service: 1 (26.0/11.0)
+|   |   |   feedback = No reason specified
+|   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   points_in_wallet <= 309.761087: 1 (3.0/1.0)
+|   |   |   |   |   points_in_wallet > 309.761087: 0 (6.0)
+|   |   |   |   complaint_status = Unsolved: 1 (3.0)
+|   |   |   |   complaint_status = Solved: 0 (2.0)
+|   |   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   |   points_in_wallet <= 441.419111: 1 (4.0)
+|   |   |   |   |   points_in_wallet > 441.419111: 0 (2.0)
+|   |   |   |   complaint_status = No Information Available: 0 (3.0/1.0)
+|   |   |   feedback = User Friendly Website: 0 (3.0)
+|   |   |   feedback = Poor Product Quality
+|   |   |   |   past_complaint = No
+|   |   |   |   |   offer_application_preference = No: 1 (7.0/1.0)
+|   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   points_in_wallet <= 324.88358: 1 (6.0)
+|   |   |   |   |   |   points_in_wallet > 324.88358: 0 (7.0/1.0)
+|   |   |   |   past_complaint = Yes: 0 (12.0/3.0)
+|   |   |   feedback = Products always in Stock: 0 (11.0)
+|   |   |   feedback = Reasonable Price: 0 (12.0)
+|   points_in_wallet > 499.434734
+|   |   membership_category = No Membership: 1 (1986.0/71.0)
+|   |   membership_category = Platinum Membership: 0 (24.0)
+|   |   membership_category = Premium Membership: 0 (17.0)
+|   |   membership_category = Basic Membership: 1 (1933.0/76.0)
+|   |   membership_category = Silver Membership
+|   |   |   points_in_wallet <= 604.01
+|   |   |   |   points_in_wallet <= 565.77: 0 (7.0)
+|   |   |   |   points_in_wallet > 565.77: 1 (18.0)
+|   |   |   points_in_wallet > 604.01: 1 (566.0/17.0)
+|   |   membership_category = Gold Membership
+|   |   |   points_in_wallet <= 602.56
+|   |   |   |   points_in_wallet <= 599.36: 0 (21.0/4.0)
+|   |   |   |   points_in_wallet > 599.36
+|   |   |   |   |   points_in_wallet <= 601.61: 1 (11.0)
+|   |   |   |   |   points_in_wallet > 601.61
+|   |   |   |   |   |   points_in_wallet <= 601.88: 0 (2.0)
+|   |   |   |   |   |   points_in_wallet > 601.88: 1 (3.0/1.0)
+|   |   |   points_in_wallet > 602.56: 1 (592.0/23.0)
+points_in_wallet > 700.05
+|   points_in_wallet <= 852.982674
+|   |   points_in_wallet <= 719.94
+|   |   |   membership_category = No Membership: 1 (112.0/2.0)
+|   |   |   membership_category = Platinum Membership: 0 (163.0)
+|   |   |   membership_category = Premium Membership: 0 (184.0)
+|   |   |   membership_category = Basic Membership: 1 (104.0/1.0)
+|   |   |   membership_category = Silver Membership
+|   |   |   |   feedback = Poor Website
+|   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   points_in_wallet <= 705.15: 1 (3.0)
+|   |   |   |   |   |   |   points_in_wallet > 705.15: 0 (12.0/4.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 1 (18.0/8.0)
+|   |   |   |   |   complaint_status = Unsolved: 0 (9.0/2.0)
+|   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   offer_application_preference = No: 1 (3.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 0 (4.0/1.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 1 (9.0/3.0)
+|   |   |   |   |   complaint_status = No Information Available: 1 (3.0/1.0)
+|   |   |   |   feedback = Too many ads
+|   |   |   |   |   complaint_status = Not Applicable: 0 (37.0/13.0)
+|   |   |   |   |   complaint_status = Unsolved: 1 (5.0/1.0)
+|   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   points_in_wallet <= 713.64: 1 (2.0)
+|   |   |   |   |   |   points_in_wallet > 713.64: 0 (4.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 1 (5.0/2.0)
+|   |   |   |   |   complaint_status = No Information Available: 1 (6.0/2.0)
+|   |   |   |   feedback = Quality Customer Care: 0 (8.0)
+|   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   offer_application_preference = No: 0 (32.0/12.0)
+|   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   past_complaint = No: 1 (17.0/6.0)
+|   |   |   |   |   |   past_complaint = Yes: 0 (7.0)
+|   |   |   |   feedback = No reason specified
+|   |   |   |   |   complaint_status = Not Applicable: 0 (23.0/7.0)
+|   |   |   |   |   complaint_status = Unsolved
+|   |   |   |   |   |   offer_application_preference = No: 1 (3.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 0 (4.0/1.0)
+|   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   offer_application_preference = No: 0 (3.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 1 (4.0/1.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 1 (10.0/3.0)
+|   |   |   |   |   complaint_status = No Information Available: 0 (9.0/2.0)
+|   |   |   |   feedback = User Friendly Website: 0 (16.0)
+|   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   points_in_wallet <= 705.36: 0 (7.0/1.0)
+|   |   |   |   |   |   points_in_wallet > 705.36: 1 (21.0/8.0)
+|   |   |   |   |   offer_application_preference = Yes: 1 (24.0/10.0)
+|   |   |   |   feedback = Products always in Stock: 0 (12.0)
+|   |   |   |   feedback = Reasonable Price: 0 (11.0)
+|   |   |   membership_category = Gold Membership
+|   |   |   |   feedback = Poor Website
+|   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   offer_application_preference = No: 1 (4.0)
+|   |   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   |   points_in_wallet <= 707.59: 1 (3.0)
+|   |   |   |   |   |   |   points_in_wallet > 707.59: 0 (8.0/1.0)
+|   |   |   |   |   complaint_status = Unsolved: 0 (7.0/1.0)
+|   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   offer_application_preference = No: 1 (3.0/1.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 0 (3.0/1.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   |   |   points_in_wallet <= 706.71: 1 (2.0)
+|   |   |   |   |   |   points_in_wallet > 706.71: 0 (8.0/2.0)
+|   |   |   |   |   complaint_status = No Information Available
+|   |   |   |   |   |   points_in_wallet <= 707.54: 0 (4.0/1.0)
+|   |   |   |   |   |   points_in_wallet > 707.54: 1 (4.0)
+|   |   |   |   feedback = Too many ads
+|   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   points_in_wallet <= 711.38: 0 (15.0/2.0)
+|   |   |   |   |   |   points_in_wallet > 711.38
+|   |   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   |   points_in_wallet <= 715.51: 1 (4.0)
+|   |   |   |   |   |   |   |   points_in_wallet > 715.51: 0 (2.0)
+|   |   |   |   |   |   |   offer_application_preference = Yes: 1 (4.0)
+|   |   |   |   |   complaint_status = Unsolved: 1 (7.0/2.0)
+|   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   points_in_wallet <= 713.81: 1 (3.0/1.0)
+|   |   |   |   |   |   points_in_wallet > 713.81: 0 (2.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 0 (5.0)
+|   |   |   |   |   complaint_status = No Information Available
+|   |   |   |   |   |   points_in_wallet <= 703.54: 0 (2.0)
+|   |   |   |   |   |   points_in_wallet > 703.54: 1 (4.0/1.0)
+|   |   |   |   feedback = Quality Customer Care: 0 (11.0)
+|   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   past_complaint = No: 0 (21.0/6.0)
+|   |   |   |   |   past_complaint = Yes: 1 (28.0/11.0)
+|   |   |   |   feedback = No reason specified
+|   |   |   |   |   past_complaint = No
+|   |   |   |   |   |   offer_application_preference = No: 1 (10.0/3.0)
+|   |   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   |   points_in_wallet <= 714.32: 0 (14.0/4.0)
+|   |   |   |   |   |   |   points_in_wallet > 714.32: 1 (4.0)
+|   |   |   |   |   past_complaint = Yes: 0 (24.0/7.0)
+|   |   |   |   feedback = User Friendly Website: 0 (14.0)
+|   |   |   |   feedback = Poor Product Quality
+|   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   points_in_wallet <= 714.06: 0 (17.0/6.0)
+|   |   |   |   |   |   points_in_wallet > 714.06: 1 (4.0)
+|   |   |   |   |   offer_application_preference = Yes: 0 (41.0/18.0)
+|   |   |   |   feedback = Products always in Stock: 0 (9.0)
+|   |   |   |   feedback = Reasonable Price: 0 (6.0)
+|   |   points_in_wallet > 719.94
+|   |   |   membership_category = No Membership: 1 (21.0)
+|   |   |   membership_category = Platinum Membership: 0 (1007.0)
+|   |   |   membership_category = Premium Membership: 0 (1074.0)
+|   |   |   membership_category = Basic Membership
+|   |   |   |   past_complaint = No
+|   |   |   |   |   points_in_wallet <= 816.37: 1 (2.0)
+|   |   |   |   |   points_in_wallet > 816.37: 0 (2.0)
+|   |   |   |   past_complaint = Yes: 1 (9.0)
+|   |   |   membership_category = Silver Membership: 0 (756.0/1.0)
+|   |   |   membership_category = Gold Membership: 0 (991.0/3.0)
+|   points_in_wallet > 852.982674
+|   |   membership_category = No Membership: 1 (207.0/3.0)
+|   |   membership_category = Platinum Membership: 0 (134.0)
+|   |   membership_category = Premium Membership: 0 (108.0)
+|   |   membership_category = Basic Membership: 1 (255.0/4.0)
+|   |   membership_category = Silver Membership
+|   |   |   points_in_wallet <= 956.195548: 1 (18.0/1.0)
+|   |   |   points_in_wallet > 956.195548
+|   |   |   |   feedback = Poor Website
+|   |   |   |   |   complaint_status = Not Applicable: 0 (14.0/5.0)
+|   |   |   |   |   complaint_status = Unsolved: 0 (3.0)
+|   |   |   |   |   complaint_status = Solved: 1 (4.0/1.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 1 (4.0/1.0)
+|   |   |   |   |   complaint_status = No Information Available: 0 (1.0)
+|   |   |   |   feedback = Too many ads
+|   |   |   |   |   points_in_wallet <= 1088.655073: 1 (16.0/5.0)
+|   |   |   |   |   points_in_wallet > 1088.655073: 0 (18.0/3.0)
+|   |   |   |   feedback = Quality Customer Care: 0 (7.0)
+|   |   |   |   feedback = Poor Customer Service
+|   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   offer_application_preference = No: 0 (6.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 1 (3.0/1.0)
+|   |   |   |   |   complaint_status = Unsolved: 1 (3.0/1.0)
+|   |   |   |   |   complaint_status = Solved: 0 (0.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 0 (4.0)
+|   |   |   |   |   complaint_status = No Information Available: 1 (6.0)
+|   |   |   |   feedback = No reason specified
+|   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   points_in_wallet <= 1068.240187: 1 (6.0)
+|   |   |   |   |   |   points_in_wallet > 1068.240187: 0 (9.0/3.0)
+|   |   |   |   |   offer_application_preference = Yes: 0 (11.0/3.0)
+|   |   |   |   feedback = User Friendly Website: 0 (7.0)
+|   |   |   |   feedback = Poor Product Quality: 0 (31.0/12.0)
+|   |   |   |   feedback = Products always in Stock: 0 (6.0)
+|   |   |   |   feedback = Reasonable Price: 0 (7.0)
+|   |   membership_category = Gold Membership
+|   |   |   points_in_wallet <= 995.77645: 1 (43.0/7.0)
+|   |   |   points_in_wallet > 995.77645: 0 (143.0/33.0)
+
+Number of Leaves  : 	156
+
+Size of the tree : 	229
+
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(nominal) membership_category           	--> 1 (nominal) membership_category
+(numeric) points_in_wallet              	--> 2 (numeric) points_in_wallet
+(nominal) offer_application_preference  	--> 3 (nominal) offer_application_preference
+(nominal) past_complaint                	--> 4 (nominal) past_complaint
+(nominal) complaint_status              	--> 5 (nominal) complaint_status
+(nominal) feedback                      	--> 6 (nominal) feedback
+(nominal) churn_risk_score              	--> 7 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.04 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.03 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5934               94.0114 %
+Incorrectly Classified Instances       378                5.9886 %
+Kappa statistic                          0.8794
+Mean absolute error                      0.0791
+Root mean squared error                  0.2159
+Relative absolute error                 15.8918 %
+Root relative squared error             43.2846 %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.920    0.042    0.950      0.920    0.935      0.880    0.963     0.964     0
+                 0.958    0.080    0.932      0.958    0.945      0.880    0.963     0.933     1
+Weighted Avg.    0.940    0.063    0.940      0.940    0.940      0.880    0.963     0.947     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2698  236 |    a = 0
+  142 3236 |    b = 1
+

@@ -1,0 +1,986 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.J48 -- -C 0.25 -M 2
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R17,8,6,5,4,3,2,7,9,16,10,15,14,18
+Instances:    12250
+Attributes:   14
+              feedback
+              internet_option
+              preferred_offer_types
+              joined_through_referral
+              membership_category
+              region_category
+              gender
+              medium_of_operation
+              days_since_last_login
+              complaint_status
+              avg_time_spent
+              past_complaint
+              offer_application_preference
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+J48 pruned tree
+------------------
+
+membership_category = No Membership: 1 (2527.0/83.0)
+membership_category = Platinum Membership: 0 (1451.0)
+membership_category = Premium Membership: 0 (1500.0)
+membership_category = Basic Membership: 1 (2510.0/85.0)
+membership_category = Silver Membership
+|   feedback = Poor Website
+|   |   offer_application_preference = No
+|   |   |   internet_option = Wi-Fi
+|   |   |   |   region_category = City
+|   |   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   avg_time_spent <= 163.45: 1 (3.0/1.0)
+|   |   |   |   |   |   |   avg_time_spent > 163.45: 0 (3.0)
+|   |   |   |   |   |   joined_through_referral = Yes: 1 (4.0/1.0)
+|   |   |   |   |   complaint_status = Unsolved: 0 (2.0)
+|   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   avg_time_spent <= 135.65: 0 (2.0)
+|   |   |   |   |   |   avg_time_spent > 135.65: 1 (2.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 1 (3.0)
+|   |   |   |   |   complaint_status = No Information Available: 0 (2.0/1.0)
+|   |   |   |   region_category = Village: 1 (5.0)
+|   |   |   |   region_category = Town
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (10.0/3.0)
+|   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   medium_of_operation = Both: 0 (0.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone: 1 (3.0)
+|   |   |   |   |   |   medium_of_operation = Desktop: 0 (5.0/1.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (10.0/2.0)
+|   |   |   internet_option = Mobile_Data
+|   |   |   |   complaint_status = Not Applicable: 0 (24.0/9.0)
+|   |   |   |   complaint_status = Unsolved: 0 (4.0/1.0)
+|   |   |   |   complaint_status = Solved
+|   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   region_category = City: 1 (2.0)
+|   |   |   |   |   |   region_category = Village: 0 (0.0)
+|   |   |   |   |   |   region_category = Town: 0 (2.0)
+|   |   |   |   |   joined_through_referral = Yes: 1 (2.0)
+|   |   |   |   complaint_status = Solved in Follow-up: 0 (3.0/1.0)
+|   |   |   |   complaint_status = No Information Available: 1 (2.0)
+|   |   |   internet_option = Fiber_Optic
+|   |   |   |   complaint_status = Not Applicable: 1 (30.0/8.0)
+|   |   |   |   complaint_status = Unsolved
+|   |   |   |   |   medium_of_operation = Both: 0 (2.0)
+|   |   |   |   |   medium_of_operation = Smartphone: 1 (3.0)
+|   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   region_category = City: 1 (2.0)
+|   |   |   |   |   |   region_category = Village: 0 (1.0)
+|   |   |   |   |   |   region_category = Town: 0 (4.0)
+|   |   |   |   complaint_status = Solved: 0 (7.0/2.0)
+|   |   |   |   complaint_status = Solved in Follow-up: 1 (9.0/1.0)
+|   |   |   |   complaint_status = No Information Available
+|   |   |   |   |   joined_through_referral = No: 1 (3.0)
+|   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   days_since_last_login <= 12: 1 (2.0)
+|   |   |   |   |   |   days_since_last_login > 12: 0 (2.0)
+|   |   offer_application_preference = Yes
+|   |   |   complaint_status = Not Applicable
+|   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   region_category = City: 1 (14.0/2.0)
+|   |   |   |   |   region_category = Village
+|   |   |   |   |   |   avg_time_spent <= 102.86: 1 (3.0)
+|   |   |   |   |   |   avg_time_spent > 102.86: 0 (3.0)
+|   |   |   |   |   region_category = Town
+|   |   |   |   |   |   avg_time_spent <= 475.29
+|   |   |   |   |   |   |   days_since_last_login <= 12: 1 (3.0/1.0)
+|   |   |   |   |   |   |   days_since_last_login > 12: 0 (9.0)
+|   |   |   |   |   |   avg_time_spent > 475.29: 1 (3.0)
+|   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   joined_through_referral = No: 0 (11.0/1.0)
+|   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   medium_of_operation = Both: 0 (1.0)
+|   |   |   |   |   |   |   medium_of_operation = Smartphone: 1 (5.0/1.0)
+|   |   |   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   |   |   gender = M: 1 (4.0/1.0)
+|   |   |   |   |   |   |   |   gender = F: 0 (3.0)
+|   |   |   |   |   |   region_category = Village: 1 (3.0/1.0)
+|   |   |   |   |   |   region_category = Town: 0 (9.0/1.0)
+|   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (31.0/10.0)
+|   |   |   complaint_status = Unsolved
+|   |   |   |   internet_option = Wi-Fi: 0 (6.0/1.0)
+|   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   region_category = City: 1 (4.0/1.0)
+|   |   |   |   |   region_category = Village: 0 (1.0)
+|   |   |   |   |   region_category = Town: 0 (4.0)
+|   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   joined_through_referral = No: 1 (3.0)
+|   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   days_since_last_login <= 9: 1 (2.0)
+|   |   |   |   |   |   days_since_last_login > 9: 0 (4.0/1.0)
+|   |   |   complaint_status = Solved
+|   |   |   |   region_category = City: 1 (7.0)
+|   |   |   |   region_category = Village: 0 (5.0/1.0)
+|   |   |   |   region_category = Town: 1 (14.0/5.0)
+|   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   region_category = City
+|   |   |   |   |   medium_of_operation = Both: 1 (3.0/1.0)
+|   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   days_since_last_login <= 12: 1 (2.0)
+|   |   |   |   |   |   days_since_last_login > 12: 0 (3.0)
+|   |   |   |   |   medium_of_operation = Desktop: 0 (2.0)
+|   |   |   |   region_category = Village: 1 (2.0)
+|   |   |   |   region_category = Town: 0 (9.0)
+|   |   |   complaint_status = No Information Available
+|   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (3.0/1.0)
+|   |   |   |   |   preferred_offer_types = Without Offers: 0 (2.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (0.0)
+|   |   |   |   internet_option = Mobile_Data: 0 (9.0/1.0)
+|   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   days_since_last_login <= 9: 1 (5.0/1.0)
+|   |   |   |   |   days_since_last_login > 9: 0 (6.0/1.0)
+|   feedback = Too many ads
+|   |   complaint_status = Not Applicable
+|   |   |   medium_of_operation = Both
+|   |   |   |   offer_application_preference = No
+|   |   |   |   |   gender = M: 0 (5.0)
+|   |   |   |   |   gender = F
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (2.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers: 0 (2.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (1.0)
+|   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   avg_time_spent <= 317.29: 0 (3.0/1.0)
+|   |   |   |   |   avg_time_spent > 317.29: 1 (6.0)
+|   |   |   medium_of_operation = Smartphone
+|   |   |   |   offer_application_preference = No
+|   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   avg_time_spent <= 37.93: 1 (3.0)
+|   |   |   |   |   |   avg_time_spent > 37.93
+|   |   |   |   |   |   |   region_category = City: 0 (3.0)
+|   |   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   |   region_category = Town
+|   |   |   |   |   |   |   |   avg_time_spent <= 116.58: 1 (2.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 116.58: 0 (5.0)
+|   |   |   |   |   joined_through_referral = Yes: 0 (18.0/4.0)
+|   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   gender = M
+|   |   |   |   |   |   avg_time_spent <= 51.45: 1 (4.0)
+|   |   |   |   |   |   avg_time_spent > 51.45: 0 (15.0/4.0)
+|   |   |   |   |   gender = F: 1 (25.0/7.0)
+|   |   |   medium_of_operation = Desktop
+|   |   |   |   days_since_last_login <= 4: 1 (12.0/3.0)
+|   |   |   |   days_since_last_login > 4
+|   |   |   |   |   region_category = City
+|   |   |   |   |   |   avg_time_spent <= 143.67: 0 (22.0/1.0)
+|   |   |   |   |   |   avg_time_spent > 143.67
+|   |   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (0.0)
+|   |   |   |   |   |   |   preferred_offer_types = Without Offers: 1 (5.0)
+|   |   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (4.0/1.0)
+|   |   |   |   |   region_category = Village
+|   |   |   |   |   |   internet_option = Wi-Fi: 1 (2.0)
+|   |   |   |   |   |   internet_option = Mobile_Data: 0 (3.0/1.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic: 0 (6.0/1.0)
+|   |   |   |   |   region_category = Town
+|   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   |   |   |   gender = M
+|   |   |   |   |   |   |   |   |   days_since_last_login <= 18: 1 (4.0/1.0)
+|   |   |   |   |   |   |   |   |   days_since_last_login > 18: 0 (2.0)
+|   |   |   |   |   |   |   |   gender = F: 0 (2.0)
+|   |   |   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   |   |   avg_time_spent <= 172.66: 1 (6.0/2.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 172.66: 0 (4.0)
+|   |   |   |   |   |   |   internet_option = Fiber_Optic: 1 (5.0/1.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 0 (18.0/5.0)
+|   |   complaint_status = Unsolved
+|   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   gender = M: 1 (8.0/3.0)
+|   |   |   |   gender = F: 0 (5.0)
+|   |   |   preferred_offer_types = Without Offers
+|   |   |   |   gender = M
+|   |   |   |   |   internet_option = Wi-Fi: 1 (2.0)
+|   |   |   |   |   internet_option = Mobile_Data: 0 (3.0)
+|   |   |   |   |   internet_option = Fiber_Optic: 0 (0.0)
+|   |   |   |   gender = F: 1 (4.0)
+|   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (16.0/4.0)
+|   |   complaint_status = Solved
+|   |   |   medium_of_operation = Both: 1 (2.0)
+|   |   |   medium_of_operation = Smartphone: 0 (29.0/8.0)
+|   |   |   medium_of_operation = Desktop
+|   |   |   |   region_category = City: 1 (3.0/1.0)
+|   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   region_category = Town: 0 (8.0/3.0)
+|   |   complaint_status = Solved in Follow-up
+|   |   |   region_category = City
+|   |   |   |   internet_option = Wi-Fi: 1 (7.0/1.0)
+|   |   |   |   internet_option = Mobile_Data: 1 (8.0/3.0)
+|   |   |   |   internet_option = Fiber_Optic: 0 (5.0/1.0)
+|   |   |   region_category = Village: 0 (3.0)
+|   |   |   region_category = Town
+|   |   |   |   medium_of_operation = Both: 1 (1.0)
+|   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   days_since_last_login <= 16: 0 (5.0)
+|   |   |   |   |   days_since_last_login > 16: 1 (6.0/2.0)
+|   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   offer_application_preference = No: 1 (6.0)
+|   |   |   |   |   offer_application_preference = Yes: 0 (6.0/2.0)
+|   |   complaint_status = No Information Available
+|   |   |   internet_option = Wi-Fi
+|   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (5.0)
+|   |   |   |   preferred_offer_types = Without Offers: 1 (4.0)
+|   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   gender = M: 1 (4.0)
+|   |   |   |   |   gender = F
+|   |   |   |   |   |   days_since_last_login <= 9: 1 (3.0/1.0)
+|   |   |   |   |   |   days_since_last_login > 9: 0 (3.0)
+|   |   |   internet_option = Mobile_Data: 1 (11.0/1.0)
+|   |   |   internet_option = Fiber_Optic
+|   |   |   |   medium_of_operation = Both: 1 (1.0)
+|   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   gender = M: 0 (6.0/2.0)
+|   |   |   |   |   gender = F: 1 (3.0)
+|   |   |   |   medium_of_operation = Desktop: 0 (7.0/1.0)
+|   feedback = Quality Customer Care: 0 (55.0)
+|   feedback = Poor Customer Service
+|   |   medium_of_operation = Both
+|   |   |   joined_through_referral = No
+|   |   |   |   region_category = City
+|   |   |   |   |   avg_time_spent <= 340.78: 0 (3.0)
+|   |   |   |   |   avg_time_spent > 340.78: 1 (6.0/1.0)
+|   |   |   |   region_category = Village: 0 (3.0)
+|   |   |   |   region_category = Town: 0 (4.0/1.0)
+|   |   |   joined_through_referral = Yes: 1 (25.0/8.0)
+|   |   medium_of_operation = Smartphone
+|   |   |   complaint_status = Not Applicable
+|   |   |   |   region_category = City
+|   |   |   |   |   days_since_last_login <= 10: 1 (7.0)
+|   |   |   |   |   days_since_last_login > 10
+|   |   |   |   |   |   internet_option = Wi-Fi: 0 (9.0/3.0)
+|   |   |   |   |   |   internet_option = Mobile_Data: 1 (9.0/3.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic: 0 (2.0)
+|   |   |   |   region_category = Village
+|   |   |   |   |   offer_application_preference = No: 0 (6.0/2.0)
+|   |   |   |   |   offer_application_preference = Yes: 1 (6.0/1.0)
+|   |   |   |   region_category = Town
+|   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   |   avg_time_spent <= 253.26: 0 (4.0/1.0)
+|   |   |   |   |   |   |   avg_time_spent > 253.26: 1 (2.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers: 0 (5.0/1.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (8.0/3.0)
+|   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   avg_time_spent <= 580.56: 0 (11.0/2.0)
+|   |   |   |   |   |   avg_time_spent > 580.56: 1 (4.0/1.0)
+|   |   |   complaint_status = Unsolved
+|   |   |   |   avg_time_spent <= 168.98
+|   |   |   |   |   gender = M
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (1.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers: 0 (2.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   |   days_since_last_login <= 15: 0 (2.0)
+|   |   |   |   |   |   |   days_since_last_login > 15: 1 (2.0)
+|   |   |   |   |   gender = F: 1 (6.0)
+|   |   |   |   avg_time_spent > 168.98: 0 (6.0)
+|   |   |   complaint_status = Solved
+|   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (4.0/1.0)
+|   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   offer_application_preference = No: 0 (3.0/1.0)
+|   |   |   |   |   offer_application_preference = Yes: 1 (3.0)
+|   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (5.0/1.0)
+|   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (4.0/2.0)
+|   |   |   |   preferred_offer_types = Without Offers: 0 (4.0)
+|   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   days_since_last_login <= 12: 1 (4.0)
+|   |   |   |   |   days_since_last_login > 12: 0 (5.0/1.0)
+|   |   |   complaint_status = No Information Available
+|   |   |   |   offer_application_preference = No: 1 (8.0/1.0)
+|   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   gender = M
+|   |   |   |   |   |   avg_time_spent <= 86.87: 0 (3.0/1.0)
+|   |   |   |   |   |   avg_time_spent > 86.87: 1 (5.0)
+|   |   |   |   |   gender = F
+|   |   |   |   |   |   days_since_last_login <= 8: 1 (2.0)
+|   |   |   |   |   |   days_since_last_login > 8: 0 (3.0)
+|   |   medium_of_operation = Desktop
+|   |   |   internet_option = Wi-Fi
+|   |   |   |   region_category = City
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   offer_application_preference = No: 1 (4.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 0 (2.0)
+|   |   |   |   |   preferred_offer_types = Without Offers: 0 (6.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (5.0/1.0)
+|   |   |   |   region_category = Village: 1 (7.0/3.0)
+|   |   |   |   region_category = Town
+|   |   |   |   |   days_since_last_login <= 16: 0 (27.0/8.0)
+|   |   |   |   |   days_since_last_login > 16: 1 (11.0/2.0)
+|   |   |   internet_option = Mobile_Data
+|   |   |   |   joined_through_referral = No
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   days_since_last_login <= 14: 0 (5.0/1.0)
+|   |   |   |   |   |   days_since_last_login > 14: 1 (4.0/1.0)
+|   |   |   |   |   preferred_offer_types = Without Offers: 0 (7.0/2.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (5.0/1.0)
+|   |   |   |   joined_through_referral = Yes: 0 (27.0/8.0)
+|   |   |   internet_option = Fiber_Optic
+|   |   |   |   past_complaint = No
+|   |   |   |   |   region_category = City: 0 (7.0/1.0)
+|   |   |   |   |   region_category = Village: 1 (3.0/1.0)
+|   |   |   |   |   region_category = Town
+|   |   |   |   |   |   gender = M
+|   |   |   |   |   |   |   offer_application_preference = No: 1 (3.0/1.0)
+|   |   |   |   |   |   |   offer_application_preference = Yes: 0 (3.0)
+|   |   |   |   |   |   gender = F: 1 (2.0)
+|   |   |   |   past_complaint = Yes
+|   |   |   |   |   days_since_last_login <= 13
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   |   |   avg_time_spent <= 65.54: 0 (3.0)
+|   |   |   |   |   |   |   avg_time_spent > 65.54: 1 (2.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   |   avg_time_spent <= 246.9: 0 (5.0)
+|   |   |   |   |   |   |   avg_time_spent > 246.9: 1 (3.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (8.0/2.0)
+|   |   |   |   |   days_since_last_login > 13: 1 (9.0)
+|   feedback = No reason specified
+|   |   past_complaint = No
+|   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   offer_application_preference = No
+|   |   |   |   |   region_category = City
+|   |   |   |   |   |   joined_through_referral = No: 0 (5.0)
+|   |   |   |   |   |   joined_through_referral = Yes: 1 (5.0/1.0)
+|   |   |   |   |   region_category = Village: 0 (6.0/1.0)
+|   |   |   |   |   region_category = Town
+|   |   |   |   |   |   joined_through_referral = No: 1 (3.0)
+|   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   avg_time_spent <= 190.14: 0 (5.0/1.0)
+|   |   |   |   |   |   |   avg_time_spent > 190.14: 1 (4.0)
+|   |   |   |   offer_application_preference = Yes: 0 (30.0/7.0)
+|   |   |   preferred_offer_types = Without Offers
+|   |   |   |   region_category = City
+|   |   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   |   avg_time_spent <= 44.01: 0 (2.0)
+|   |   |   |   |   |   avg_time_spent > 44.01: 1 (6.0/1.0)
+|   |   |   |   |   internet_option = Mobile_Data: 0 (7.0/2.0)
+|   |   |   |   |   internet_option = Fiber_Optic: 0 (13.0)
+|   |   |   |   region_category = Village: 0 (4.0/1.0)
+|   |   |   |   region_category = Town
+|   |   |   |   |   internet_option = Wi-Fi: 0 (9.0/1.0)
+|   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   avg_time_spent <= 232.9: 0 (4.0)
+|   |   |   |   |   |   avg_time_spent > 232.9: 1 (6.0/1.0)
+|   |   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   |   avg_time_spent <= 198.82: 1 (5.0)
+|   |   |   |   |   |   avg_time_spent > 198.82
+|   |   |   |   |   |   |   gender = M: 0 (5.0/1.0)
+|   |   |   |   |   |   |   gender = F: 1 (3.0/1.0)
+|   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   gender = M: 0 (6.0/1.0)
+|   |   |   |   |   gender = F
+|   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   avg_time_spent <= 127.63: 0 (3.0)
+|   |   |   |   |   |   |   avg_time_spent > 127.63: 1 (4.0)
+|   |   |   |   |   |   joined_through_referral = Yes: 1 (4.0)
+|   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   region_category = City
+|   |   |   |   |   |   gender = M: 0 (6.0/2.0)
+|   |   |   |   |   |   gender = F
+|   |   |   |   |   |   |   avg_time_spent <= 609.91: 1 (6.0)
+|   |   |   |   |   |   |   avg_time_spent > 609.91: 0 (2.0)
+|   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   region_category = Town: 0 (13.0/1.0)
+|   |   |   |   internet_option = Fiber_Optic: 1 (16.0/5.0)
+|   |   past_complaint = Yes
+|   |   |   complaint_status = Not Applicable: 1 (0.0)
+|   |   |   complaint_status = Unsolved
+|   |   |   |   joined_through_referral = No
+|   |   |   |   |   avg_time_spent <= 33.91: 0 (3.0)
+|   |   |   |   |   avg_time_spent > 33.91: 1 (10.0/1.0)
+|   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   gender = M
+|   |   |   |   |   |   internet_option = Wi-Fi: 1 (0.0)
+|   |   |   |   |   |   internet_option = Mobile_Data: 0 (5.0/1.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic: 1 (4.0)
+|   |   |   |   |   gender = F: 0 (9.0)
+|   |   |   complaint_status = Solved
+|   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   joined_through_referral = No: 1 (10.0)
+|   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   avg_time_spent <= 269.74: 0 (2.0)
+|   |   |   |   |   |   |   avg_time_spent > 269.74: 1 (4.0)
+|   |   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   |   days_since_last_login <= 7: 1 (3.0)
+|   |   |   |   |   |   |   days_since_last_login > 7: 0 (5.0)
+|   |   |   |   internet_option = Mobile_Data: 0 (11.0/2.0)
+|   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   days_since_last_login <= 16: 0 (4.0)
+|   |   |   |   |   days_since_last_login > 16: 1 (6.0)
+|   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   medium_of_operation = Both
+|   |   |   |   |   days_since_last_login <= 12: 1 (2.0)
+|   |   |   |   |   days_since_last_login > 12: 0 (5.0/1.0)
+|   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   avg_time_spent <= 88.2: 0 (4.0)
+|   |   |   |   |   avg_time_spent > 88.2
+|   |   |   |   |   |   internet_option = Wi-Fi: 1 (7.0/1.0)
+|   |   |   |   |   |   internet_option = Mobile_Data: 1 (6.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   |   days_since_last_login <= 14: 0 (4.0)
+|   |   |   |   |   |   |   |   days_since_last_login > 14: 1 (2.0)
+|   |   |   |   |   |   |   region_category = Village: 0 (0.0)
+|   |   |   |   |   |   |   region_category = Town: 1 (4.0/1.0)
+|   |   |   |   medium_of_operation = Desktop: 1 (17.0/3.0)
+|   |   |   complaint_status = No Information Available
+|   |   |   |   gender = M
+|   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   region_category = City: 1 (4.0/1.0)
+|   |   |   |   |   |   region_category = Village: 0 (1.0)
+|   |   |   |   |   |   region_category = Town: 0 (5.0/1.0)
+|   |   |   |   |   joined_through_referral = Yes: 1 (14.0/3.0)
+|   |   |   |   gender = F: 0 (25.0/8.0)
+|   feedback = User Friendly Website: 0 (71.0)
+|   feedback = Poor Product Quality
+|   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   gender = M
+|   |   |   |   region_category = City
+|   |   |   |   |   complaint_status = Not Applicable: 0 (11.0/4.0)
+|   |   |   |   |   complaint_status = Unsolved: 0 (3.0/1.0)
+|   |   |   |   |   complaint_status = Solved
+|   |   |   |   |   |   medium_of_operation = Both: 0 (0.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone: 0 (2.0)
+|   |   |   |   |   |   medium_of_operation = Desktop: 1 (2.0)
+|   |   |   |   |   complaint_status = Solved in Follow-up: 1 (5.0/1.0)
+|   |   |   |   |   complaint_status = No Information Available: 0 (5.0/2.0)
+|   |   |   |   region_category = Village
+|   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   days_since_last_login <= 14: 1 (2.0)
+|   |   |   |   |   |   days_since_last_login > 14: 0 (2.0)
+|   |   |   |   |   joined_through_referral = Yes: 0 (3.0)
+|   |   |   |   region_category = Town
+|   |   |   |   |   internet_option = Wi-Fi: 0 (7.0/1.0)
+|   |   |   |   |   internet_option = Mobile_Data: 1 (7.0/2.0)
+|   |   |   |   |   internet_option = Fiber_Optic: 1 (8.0/1.0)
+|   |   |   gender = F
+|   |   |   |   past_complaint = No
+|   |   |   |   |   avg_time_spent <= 308.4: 1 (13.0/4.0)
+|   |   |   |   |   avg_time_spent > 308.4: 0 (5.0)
+|   |   |   |   past_complaint = Yes: 0 (25.0/5.0)
+|   |   preferred_offer_types = Without Offers
+|   |   |   medium_of_operation = Both: 1 (11.0/4.0)
+|   |   |   medium_of_operation = Smartphone
+|   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   days_since_last_login <= 22: 0 (25.0/8.0)
+|   |   |   |   |   days_since_last_login > 22: 1 (4.0)
+|   |   |   |   complaint_status = Unsolved: 0 (4.0/2.0)
+|   |   |   |   complaint_status = Solved: 1 (5.0/1.0)
+|   |   |   |   complaint_status = Solved in Follow-up: 0 (7.0/1.0)
+|   |   |   |   complaint_status = No Information Available
+|   |   |   |   |   days_since_last_login <= 21: 1 (3.0)
+|   |   |   |   |   days_since_last_login > 21: 0 (2.0)
+|   |   |   medium_of_operation = Desktop
+|   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   avg_time_spent <= 237.58: 1 (15.0/5.0)
+|   |   |   |   |   avg_time_spent > 237.58: 0 (5.0/1.0)
+|   |   |   |   internet_option = Mobile_Data: 0 (15.0/5.0)
+|   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   region_category = City: 1 (10.0/1.0)
+|   |   |   |   |   region_category = Village: 1 (2.0)
+|   |   |   |   |   region_category = Town: 0 (6.0/1.0)
+|   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   days_since_last_login <= 15
+|   |   |   |   complaint_status = Not Applicable: 1 (29.0/6.0)
+|   |   |   |   complaint_status = Unsolved
+|   |   |   |   |   joined_through_referral = No: 1 (10.0/3.0)
+|   |   |   |   |   joined_through_referral = Yes: 0 (3.0)
+|   |   |   |   complaint_status = Solved
+|   |   |   |   |   avg_time_spent <= 211.27: 1 (2.0)
+|   |   |   |   |   avg_time_spent > 211.27: 0 (4.0)
+|   |   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   |   internet_option = Wi-Fi: 0 (2.0)
+|   |   |   |   |   internet_option = Mobile_Data: 1 (3.0)
+|   |   |   |   |   internet_option = Fiber_Optic: 1 (2.0)
+|   |   |   |   complaint_status = No Information Available: 1 (17.0/4.0)
+|   |   |   days_since_last_login > 15
+|   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   internet_option = Wi-Fi: 1 (5.0/2.0)
+|   |   |   |   |   internet_option = Mobile_Data: 1 (5.0/1.0)
+|   |   |   |   |   internet_option = Fiber_Optic: 0 (10.0/3.0)
+|   |   |   |   complaint_status = Unsolved: 0 (8.0/1.0)
+|   |   |   |   complaint_status = Solved
+|   |   |   |   |   gender = M: 0 (3.0/1.0)
+|   |   |   |   |   gender = F: 1 (4.0)
+|   |   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   |   region_category = City: 0 (3.0)
+|   |   |   |   |   region_category = Village: 0 (0.0)
+|   |   |   |   |   region_category = Town: 1 (4.0/1.0)
+|   |   |   |   complaint_status = No Information Available: 0 (5.0/1.0)
+|   feedback = Products always in Stock: 0 (54.0)
+|   feedback = Reasonable Price: 0 (62.0)
+membership_category = Gold Membership
+|   feedback = Poor Website
+|   |   days_since_last_login <= 4: 0 (30.0/6.0)
+|   |   days_since_last_login > 4
+|   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   region_category = City: 1 (37.0/12.0)
+|   |   |   |   region_category = Village
+|   |   |   |   |   past_complaint = No: 0 (6.0/1.0)
+|   |   |   |   |   past_complaint = Yes
+|   |   |   |   |   |   medium_of_operation = Both: 1 (0.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone: 0 (3.0/1.0)
+|   |   |   |   |   |   medium_of_operation = Desktop: 1 (5.0)
+|   |   |   |   region_category = Town
+|   |   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   joined_through_referral = No: 1 (4.0/1.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes: 0 (4.0/1.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 0 (4.0)
+|   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   joined_through_referral = No: 0 (9.0)
+|   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   gender = M: 1 (4.0)
+|   |   |   |   |   |   |   gender = F: 0 (7.0/2.0)
+|   |   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   |   days_since_last_login <= 16: 1 (13.0/3.0)
+|   |   |   |   |   |   days_since_last_login > 16: 0 (7.0/2.0)
+|   |   |   preferred_offer_types = Without Offers
+|   |   |   |   joined_through_referral = No: 1 (58.0/20.0)
+|   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   gender = M
+|   |   |   |   |   |   offer_application_preference = No: 0 (11.0/1.0)
+|   |   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   |   internet_option = Wi-Fi: 0 (4.0/1.0)
+|   |   |   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   |   |   avg_time_spent <= 158.4: 0 (3.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 158.4: 1 (4.0/1.0)
+|   |   |   |   |   |   |   internet_option = Fiber_Optic: 1 (2.0)
+|   |   |   |   |   gender = F
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   complaint_status = Not Applicable: 0 (7.0/2.0)
+|   |   |   |   |   |   |   complaint_status = Unsolved: 1 (1.0)
+|   |   |   |   |   |   |   complaint_status = Solved: 0 (0.0)
+|   |   |   |   |   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   |   |   |   |   avg_time_spent <= 422.21: 0 (2.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 422.21: 1 (2.0)
+|   |   |   |   |   |   |   complaint_status = No Information Available: 1 (1.0)
+|   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   region_category = Town
+|   |   |   |   |   |   |   avg_time_spent <= 227.78: 1 (12.0/4.0)
+|   |   |   |   |   |   |   avg_time_spent > 227.78: 0 (6.0/2.0)
+|   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   days_since_last_login <= 8: 1 (4.0)
+|   |   |   |   |   days_since_last_login > 8: 0 (37.0/8.0)
+|   |   |   |   complaint_status = Unsolved: 0 (16.0/5.0)
+|   |   |   |   complaint_status = Solved
+|   |   |   |   |   joined_through_referral = No: 0 (8.0/1.0)
+|   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   avg_time_spent <= 76.78: 0 (2.0)
+|   |   |   |   |   |   avg_time_spent > 76.78: 1 (6.0)
+|   |   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   |   avg_time_spent <= 120.9: 1 (8.0/2.0)
+|   |   |   |   |   avg_time_spent > 120.9: 0 (11.0/3.0)
+|   |   |   |   complaint_status = No Information Available
+|   |   |   |   |   internet_option = Wi-Fi: 1 (3.0)
+|   |   |   |   |   internet_option = Mobile_Data: 0 (4.0)
+|   |   |   |   |   internet_option = Fiber_Optic: 0 (7.0/1.0)
+|   feedback = Too many ads
+|   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   medium_of_operation = Both
+|   |   |   |   gender = M: 0 (6.0/1.0)
+|   |   |   |   gender = F: 1 (9.0/2.0)
+|   |   |   medium_of_operation = Smartphone
+|   |   |   |   complaint_status = Not Applicable
+|   |   |   |   |   joined_through_referral = No: 0 (10.0/1.0)
+|   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   region_category = City: 0 (2.0)
+|   |   |   |   |   |   region_category = Village: 0 (2.0/1.0)
+|   |   |   |   |   |   region_category = Town: 1 (3.0)
+|   |   |   |   complaint_status = Unsolved
+|   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   region_category = City: 1 (3.0)
+|   |   |   |   |   |   region_category = Village: 0 (2.0)
+|   |   |   |   |   |   region_category = Town: 1 (3.0)
+|   |   |   |   |   offer_application_preference = Yes: 0 (2.0)
+|   |   |   |   complaint_status = Solved
+|   |   |   |   |   joined_through_referral = No: 1 (2.0)
+|   |   |   |   |   joined_through_referral = Yes: 0 (4.0/1.0)
+|   |   |   |   complaint_status = Solved in Follow-up: 1 (4.0)
+|   |   |   |   complaint_status = No Information Available: 0 (3.0/1.0)
+|   |   |   medium_of_operation = Desktop
+|   |   |   |   joined_through_referral = No: 0 (17.0)
+|   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   avg_time_spent <= 56.04: 1 (4.0)
+|   |   |   |   |   avg_time_spent > 56.04: 0 (15.0/4.0)
+|   |   preferred_offer_types = Without Offers
+|   |   |   region_category = City: 1 (55.0/21.0)
+|   |   |   region_category = Village
+|   |   |   |   gender = M: 0 (7.0/1.0)
+|   |   |   |   gender = F
+|   |   |   |   |   medium_of_operation = Both: 1 (0.0)
+|   |   |   |   |   medium_of_operation = Smartphone: 0 (7.0/3.0)
+|   |   |   |   |   medium_of_operation = Desktop: 1 (2.0)
+|   |   |   region_category = Town
+|   |   |   |   gender = M: 0 (12.0/4.0)
+|   |   |   |   gender = F
+|   |   |   |   |   days_since_last_login <= 13: 1 (16.0/5.0)
+|   |   |   |   |   days_since_last_login > 13: 0 (13.0/3.0)
+|   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   complaint_status = Not Applicable
+|   |   |   |   medium_of_operation = Both: 1 (9.0/3.0)
+|   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   gender = M
+|   |   |   |   |   |   avg_time_spent <= 351.73: 1 (9.0/1.0)
+|   |   |   |   |   |   avg_time_spent > 351.73: 0 (2.0)
+|   |   |   |   |   gender = F
+|   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   offer_application_preference = No: 1 (2.0)
+|   |   |   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   |   |   avg_time_spent <= 144.7: 0 (2.0)
+|   |   |   |   |   |   |   |   avg_time_spent > 144.7: 1 (3.0/1.0)
+|   |   |   |   |   |   joined_through_referral = Yes: 0 (12.0/2.0)
+|   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   region_category = City: 0 (4.0)
+|   |   |   |   |   |   region_category = Village: 0 (3.0/1.0)
+|   |   |   |   |   |   region_category = Town
+|   |   |   |   |   |   |   avg_time_spent <= 358.21: 0 (3.0)
+|   |   |   |   |   |   |   avg_time_spent > 358.21: 1 (3.0)
+|   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   gender = M
+|   |   |   |   |   |   |   avg_time_spent <= 461.25: 0 (4.0)
+|   |   |   |   |   |   |   avg_time_spent > 461.25: 1 (2.0)
+|   |   |   |   |   |   gender = F: 1 (5.0)
+|   |   |   complaint_status = Unsolved
+|   |   |   |   offer_application_preference = No: 0 (5.0/1.0)
+|   |   |   |   offer_application_preference = Yes: 1 (6.0/1.0)
+|   |   |   complaint_status = Solved
+|   |   |   |   internet_option = Wi-Fi: 1 (2.0)
+|   |   |   |   internet_option = Mobile_Data: 1 (3.0)
+|   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   offer_application_preference = No: 0 (4.0)
+|   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   avg_time_spent <= 401.4: 0 (2.0)
+|   |   |   |   |   |   avg_time_spent > 401.4: 1 (2.0)
+|   |   |   complaint_status = Solved in Follow-up: 0 (7.0/1.0)
+|   |   |   complaint_status = No Information Available
+|   |   |   |   internet_option = Wi-Fi: 0 (3.0)
+|   |   |   |   internet_option = Mobile_Data: 1 (4.0)
+|   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   avg_time_spent <= 175.02: 0 (2.0)
+|   |   |   |   |   avg_time_spent > 175.02: 1 (4.0)
+|   feedback = Quality Customer Care: 0 (137.0)
+|   feedback = Poor Customer Service
+|   |   complaint_status = Not Applicable
+|   |   |   joined_through_referral = No
+|   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   region_category = City
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (1.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   |   avg_time_spent <= 361.55: 1 (3.0)
+|   |   |   |   |   |   |   avg_time_spent > 361.55: 0 (4.0/1.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (3.0/1.0)
+|   |   |   |   |   region_category = Village: 0 (3.0)
+|   |   |   |   |   region_category = Town: 1 (10.0/3.0)
+|   |   |   |   internet_option = Mobile_Data: 0 (27.0/9.0)
+|   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   days_since_last_login <= 11: 1 (10.0/2.0)
+|   |   |   |   |   days_since_last_login > 11: 0 (18.0/5.0)
+|   |   |   joined_through_referral = Yes
+|   |   |   |   gender = M
+|   |   |   |   |   internet_option = Wi-Fi: 1 (10.0/4.0)
+|   |   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   |   offer_application_preference = No: 0 (6.0/1.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 1 (8.0/2.0)
+|   |   |   |   |   internet_option = Fiber_Optic: 1 (19.0/3.0)
+|   |   |   |   gender = F
+|   |   |   |   |   medium_of_operation = Both
+|   |   |   |   |   |   region_category = City: 1 (3.0)
+|   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   region_category = Town: 0 (2.0)
+|   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   avg_time_spent <= 56.67: 1 (2.0)
+|   |   |   |   |   |   |   avg_time_spent > 56.67: 0 (6.0)
+|   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   region_category = Town: 1 (7.0/1.0)
+|   |   |   |   |   medium_of_operation = Desktop: 0 (18.0/5.0)
+|   |   complaint_status = Unsolved
+|   |   |   medium_of_operation = Both: 0 (7.0)
+|   |   |   medium_of_operation = Smartphone
+|   |   |   |   region_category = City: 0 (11.0/2.0)
+|   |   |   |   region_category = Village: 0 (2.0)
+|   |   |   |   region_category = Town
+|   |   |   |   |   gender = M: 1 (4.0)
+|   |   |   |   |   gender = F: 0 (4.0/1.0)
+|   |   |   medium_of_operation = Desktop
+|   |   |   |   gender = M
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (3.0)
+|   |   |   |   |   preferred_offer_types = Without Offers: 1 (6.0/2.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (2.0/1.0)
+|   |   |   |   gender = F: 1 (14.0/3.0)
+|   |   complaint_status = Solved
+|   |   |   internet_option = Wi-Fi
+|   |   |   |   medium_of_operation = Both: 1 (3.0/1.0)
+|   |   |   |   medium_of_operation = Smartphone: 1 (6.0)
+|   |   |   |   medium_of_operation = Desktop: 0 (6.0/2.0)
+|   |   |   internet_option = Mobile_Data
+|   |   |   |   avg_time_spent <= 334.76: 0 (9.0/2.0)
+|   |   |   |   avg_time_spent > 334.76: 1 (3.0)
+|   |   |   internet_option = Fiber_Optic: 0 (27.0/7.0)
+|   |   complaint_status = Solved in Follow-up
+|   |   |   gender = M
+|   |   |   |   medium_of_operation = Both: 0 (2.0)
+|   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (3.0)
+|   |   |   |   |   preferred_offer_types = Without Offers: 0 (2.0/1.0)
+|   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (4.0/1.0)
+|   |   |   |   medium_of_operation = Desktop: 1 (11.0/4.0)
+|   |   |   gender = F
+|   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (11.0/1.0)
+|   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   days_since_last_login <= 15: 0 (3.0)
+|   |   |   |   |   days_since_last_login > 15: 1 (6.0/1.0)
+|   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   offer_application_preference = No: 0 (3.0)
+|   |   |   |   |   offer_application_preference = Yes: 1 (3.0/1.0)
+|   |   complaint_status = No Information Available
+|   |   |   medium_of_operation = Both
+|   |   |   |   offer_application_preference = No: 1 (2.0)
+|   |   |   |   offer_application_preference = Yes: 0 (3.0/1.0)
+|   |   |   medium_of_operation = Smartphone: 1 (20.0/5.0)
+|   |   |   medium_of_operation = Desktop
+|   |   |   |   days_since_last_login <= 12: 0 (10.0/3.0)
+|   |   |   |   days_since_last_login > 12: 1 (4.0)
+|   feedback = No reason specified
+|   |   complaint_status = Not Applicable
+|   |   |   internet_option = Wi-Fi
+|   |   |   |   region_category = City
+|   |   |   |   |   offer_application_preference = No: 1 (8.0)
+|   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   joined_through_referral = No: 0 (3.0)
+|   |   |   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   |   |   days_since_last_login <= 14: 1 (4.0)
+|   |   |   |   |   |   |   days_since_last_login > 14: 0 (4.0/1.0)
+|   |   |   |   region_category = Village
+|   |   |   |   |   offer_application_preference = No: 1 (3.0)
+|   |   |   |   |   offer_application_preference = Yes: 0 (3.0/1.0)
+|   |   |   |   region_category = Town
+|   |   |   |   |   medium_of_operation = Both: 0 (4.0/1.0)
+|   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   gender = M
+|   |   |   |   |   |   |   days_since_last_login <= 8: 0 (3.0)
+|   |   |   |   |   |   |   days_since_last_login > 8: 1 (8.0/2.0)
+|   |   |   |   |   |   gender = F: 0 (8.0/2.0)
+|   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (2.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   |   |   days_since_last_login <= 16: 0 (5.0/2.0)
+|   |   |   |   |   |   |   days_since_last_login > 16: 1 (3.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers: 1 (3.0)
+|   |   |   internet_option = Mobile_Data
+|   |   |   |   days_since_last_login <= 10: 0 (16.0/1.0)
+|   |   |   |   days_since_last_login > 10
+|   |   |   |   |   region_category = City
+|   |   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   |   joined_through_referral = No: 0 (3.0)
+|   |   |   |   |   |   |   joined_through_referral = Yes: 1 (3.0/1.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 1 (8.0/1.0)
+|   |   |   |   |   region_category = Village
+|   |   |   |   |   |   offer_application_preference = No: 1 (2.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 0 (2.0)
+|   |   |   |   |   region_category = Town
+|   |   |   |   |   |   offer_application_preference = No: 1 (10.0/4.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 0 (14.0/3.0)
+|   |   |   internet_option = Fiber_Optic
+|   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   offer_application_preference = No: 1 (6.0/1.0)
+|   |   |   |   |   offer_application_preference = Yes
+|   |   |   |   |   |   medium_of_operation = Both: 1 (1.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   |   region_category = City: 1 (2.0)
+|   |   |   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   |   |   region_category = Town: 0 (4.0/1.0)
+|   |   |   |   |   |   medium_of_operation = Desktop: 0 (3.0)
+|   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   region_category = City
+|   |   |   |   |   |   days_since_last_login <= 11: 1 (5.0/1.0)
+|   |   |   |   |   |   days_since_last_login > 11: 0 (4.0)
+|   |   |   |   |   region_category = Village: 0 (2.0)
+|   |   |   |   |   region_category = Town
+|   |   |   |   |   |   days_since_last_login <= 17: 1 (8.0)
+|   |   |   |   |   |   days_since_last_login > 17: 0 (3.0/1.0)
+|   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   avg_time_spent <= 309.22: 1 (14.0/5.0)
+|   |   |   |   |   avg_time_spent > 309.22: 0 (7.0)
+|   |   complaint_status = Unsolved
+|   |   |   gender = M
+|   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 0 (10.0/5.0)
+|   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   avg_time_spent <= 566.34: 0 (5.0)
+|   |   |   |   |   avg_time_spent > 566.34: 1 (2.0)
+|   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   offer_application_preference = No: 1 (2.0)
+|   |   |   |   |   offer_application_preference = Yes: 0 (3.0/1.0)
+|   |   |   gender = F: 1 (19.0/7.0)
+|   |   complaint_status = Solved
+|   |   |   days_since_last_login <= 20
+|   |   |   |   medium_of_operation = Both: 0 (10.0/4.0)
+|   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   internet_option = Wi-Fi
+|   |   |   |   |   |   days_since_last_login <= 15: 1 (6.0/2.0)
+|   |   |   |   |   |   days_since_last_login > 15: 0 (3.0)
+|   |   |   |   |   internet_option = Mobile_Data: 1 (5.0/1.0)
+|   |   |   |   |   internet_option = Fiber_Optic: 1 (2.0)
+|   |   |   |   medium_of_operation = Desktop: 0 (14.0/5.0)
+|   |   |   days_since_last_login > 20: 0 (7.0)
+|   |   complaint_status = Solved in Follow-up
+|   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (15.0/3.0)
+|   |   |   preferred_offer_types = Without Offers
+|   |   |   |   days_since_last_login <= 19: 1 (15.0/3.0)
+|   |   |   |   days_since_last_login > 19: 0 (5.0)
+|   |   |   preferred_offer_types = Credit/Debit Card Offers: 0 (6.0/1.0)
+|   |   complaint_status = No Information Available: 0 (43.0/16.0)
+|   feedback = User Friendly Website: 0 (140.0)
+|   feedback = Poor Product Quality
+|   |   past_complaint = No
+|   |   |   gender = M
+|   |   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   |   medium_of_operation = Both: 0 (4.0)
+|   |   |   |   |   medium_of_operation = Smartphone
+|   |   |   |   |   |   internet_option = Wi-Fi: 1 (3.0)
+|   |   |   |   |   |   internet_option = Mobile_Data: 0 (2.0)
+|   |   |   |   |   |   internet_option = Fiber_Optic: 0 (4.0/1.0)
+|   |   |   |   |   medium_of_operation = Desktop
+|   |   |   |   |   |   avg_time_spent <= 339.58: 1 (11.0/4.0)
+|   |   |   |   |   |   avg_time_spent > 339.58: 0 (6.0)
+|   |   |   |   preferred_offer_types = Without Offers
+|   |   |   |   |   avg_time_spent <= 186.93: 1 (21.0/5.0)
+|   |   |   |   |   avg_time_spent > 186.93: 0 (14.0/4.0)
+|   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   internet_option = Wi-Fi: 0 (14.0/4.0)
+|   |   |   |   |   internet_option = Mobile_Data: 1 (9.0/2.0)
+|   |   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   |   joined_through_referral = No
+|   |   |   |   |   |   |   avg_time_spent <= 214.76: 1 (2.0)
+|   |   |   |   |   |   |   avg_time_spent > 214.76: 0 (3.0/1.0)
+|   |   |   |   |   |   joined_through_referral = Yes: 0 (2.0)
+|   |   |   gender = F
+|   |   |   |   joined_through_referral = No
+|   |   |   |   |   region_category = City: 0 (25.0/8.0)
+|   |   |   |   |   region_category = Village
+|   |   |   |   |   |   offer_application_preference = No: 0 (10.0/3.0)
+|   |   |   |   |   |   offer_application_preference = Yes: 1 (2.0)
+|   |   |   |   |   region_category = Town
+|   |   |   |   |   |   preferred_offer_types = Gift Vouchers/Coupons: 1 (2.0)
+|   |   |   |   |   |   preferred_offer_types = Without Offers: 1 (6.0)
+|   |   |   |   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   |   |   |   days_since_last_login <= 14: 0 (4.0)
+|   |   |   |   |   |   |   days_since_last_login > 14: 1 (2.0)
+|   |   |   |   joined_through_referral = Yes
+|   |   |   |   |   offer_application_preference = No
+|   |   |   |   |   |   region_category = City
+|   |   |   |   |   |   |   avg_time_spent <= 62.65: 1 (4.0)
+|   |   |   |   |   |   |   avg_time_spent > 62.65: 0 (7.0/1.0)
+|   |   |   |   |   |   region_category = Village: 1 (2.0)
+|   |   |   |   |   |   region_category = Town: 1 (9.0/2.0)
+|   |   |   |   |   offer_application_preference = Yes: 1 (28.0/5.0)
+|   |   past_complaint = Yes
+|   |   |   preferred_offer_types = Gift Vouchers/Coupons
+|   |   |   |   internet_option = Wi-Fi: 0 (18.0/5.0)
+|   |   |   |   internet_option = Mobile_Data
+|   |   |   |   |   medium_of_operation = Both
+|   |   |   |   |   |   region_category = City: 0 (2.0)
+|   |   |   |   |   |   region_category = Village: 0 (0.0)
+|   |   |   |   |   |   region_category = Town: 1 (2.0)
+|   |   |   |   |   medium_of_operation = Smartphone: 0 (4.0/1.0)
+|   |   |   |   |   medium_of_operation = Desktop: 1 (12.0/2.0)
+|   |   |   |   internet_option = Fiber_Optic
+|   |   |   |   |   medium_of_operation = Both: 1 (2.0)
+|   |   |   |   |   medium_of_operation = Smartphone: 1 (7.0/2.0)
+|   |   |   |   |   medium_of_operation = Desktop: 0 (9.0/2.0)
+|   |   |   preferred_offer_types = Without Offers
+|   |   |   |   complaint_status = Not Applicable: 0 (0.0)
+|   |   |   |   complaint_status = Unsolved
+|   |   |   |   |   avg_time_spent <= 32.71: 0 (4.0)
+|   |   |   |   |   avg_time_spent > 32.71
+|   |   |   |   |   |   region_category = City: 1 (3.0)
+|   |   |   |   |   |   region_category = Village: 0 (4.0/1.0)
+|   |   |   |   |   |   region_category = Town
+|   |   |   |   |   |   |   internet_option = Wi-Fi: 1 (3.0)
+|   |   |   |   |   |   |   internet_option = Mobile_Data: 0 (2.0)
+|   |   |   |   |   |   |   internet_option = Fiber_Optic: 1 (3.0/1.0)
+|   |   |   |   complaint_status = Solved: 0 (14.0/2.0)
+|   |   |   |   complaint_status = Solved in Follow-up
+|   |   |   |   |   region_category = City: 0 (9.0/2.0)
+|   |   |   |   |   region_category = Village: 1 (1.0)
+|   |   |   |   |   region_category = Town
+|   |   |   |   |   |   medium_of_operation = Both: 0 (2.0)
+|   |   |   |   |   |   medium_of_operation = Smartphone: 1 (3.0)
+|   |   |   |   |   |   medium_of_operation = Desktop: 0 (6.0/2.0)
+|   |   |   |   complaint_status = No Information Available
+|   |   |   |   |   avg_time_spent <= 256.08: 0 (7.0/1.0)
+|   |   |   |   |   avg_time_spent > 256.08: 1 (3.0)
+|   |   |   preferred_offer_types = Credit/Debit Card Offers
+|   |   |   |   avg_time_spent <= 827.42
+|   |   |   |   |   offer_application_preference = No: 1 (23.0/9.0)
+|   |   |   |   |   offer_application_preference = Yes: 0 (28.0/8.0)
+|   |   |   |   avg_time_spent > 827.42: 1 (7.0)
+|   feedback = Products always in Stock: 0 (122.0)
+|   feedback = Reasonable Price: 0 (120.0)
+
+Number of Leaves  : 	555
+
+Size of the tree : 	903
+
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(nominal) feedback                      	--> 13 (nominal) feedback
+(nominal) internet_option               	--> 7 (nominal) internet_option
+(nominal) preferred_offer_types         	--> 5 (nominal) preferred_offer_types
+(nominal) joined_through_referral       	--> 4 (nominal) joined_through_referral
+(nominal) membership_category           	--> 3 (nominal) membership_category
+(nominal) region_category               	--> 2 (nominal) region_category
+(nominal) gender                        	--> 1 (nominal) gender
+(nominal) medium_of_operation           	--> 6 (nominal) medium_of_operation
+(numeric) days_since_last_login         	--> 8 (numeric) days_since_last_login
+(nominal) complaint_status              	--> 12 (nominal) complaint_status
+(numeric) avg_time_spent                	--> 9 (numeric) avg_time_spent
+(nominal) past_complaint                	--> 11 (nominal) past_complaint
+(nominal) offer_application_preference  	--> 10 (nominal) offer_application_preference
+(nominal) churn_risk_score              	--> 14 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.06 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.05 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5323               84.3314 %
+Incorrectly Classified Instances       989               15.6686 %
+Kappa statistic                          0.6844
+Mean absolute error                      0.1691
+Root mean squared error                  0.3432
+Relative absolute error                 33.995  %
+Root relative squared error             68.8157 %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.816    0.133    0.842      0.816    0.829      0.685    0.895     0.893     0
+                 0.867    0.184    0.845      0.867    0.856      0.685    0.895     0.862     1
+Weighted Avg.    0.843    0.160    0.843      0.843    0.843      0.685    0.895     0.876     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2395  539 |    a = 0
+  450 2928 |    b = 1
+

@@ -1,0 +1,81 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.trees.RandomForest -- -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R17,8,6,5,4,3,2,7,9,16,10,15,14,18
+Instances:    12250
+Attributes:   14
+              feedback
+              internet_option
+              preferred_offer_types
+              joined_through_referral
+              membership_category
+              region_category
+              gender
+              medium_of_operation
+              days_since_last_login
+              complaint_status
+              avg_time_spent
+              past_complaint
+              offer_application_preference
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(nominal) feedback                      	--> 13 (nominal) feedback
+(nominal) internet_option               	--> 7 (nominal) internet_option
+(nominal) preferred_offer_types         	--> 5 (nominal) preferred_offer_types
+(nominal) joined_through_referral       	--> 4 (nominal) joined_through_referral
+(nominal) membership_category           	--> 3 (nominal) membership_category
+(nominal) region_category               	--> 2 (nominal) region_category
+(nominal) gender                        	--> 1 (nominal) gender
+(nominal) medium_of_operation           	--> 6 (nominal) medium_of_operation
+(numeric) days_since_last_login         	--> 8 (numeric) days_since_last_login
+(nominal) complaint_status              	--> 12 (nominal) complaint_status
+(numeric) avg_time_spent                	--> 9 (numeric) avg_time_spent
+(nominal) past_complaint                	--> 11 (nominal) past_complaint
+(nominal) offer_application_preference  	--> 10 (nominal) offer_application_preference
+(nominal) churn_risk_score              	--> 14 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.88 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.29 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5321               84.2997 %
+Incorrectly Classified Instances       991               15.7003 %
+Kappa statistic                          0.6841
+Mean absolute error                      0.1854
+Root mean squared error                  0.3015
+Relative absolute error                 37.258  %
+Root relative squared error             60.446  %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.822    0.139    0.837      0.822    0.830      0.684    0.941     0.942     0
+                 0.861    0.178    0.848      0.861    0.854      0.684    0.941     0.935     1
+Weighted Avg.    0.843    0.160    0.843      0.843    0.843      0.684    0.941     0.939     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2412  522 |    a = 0
+  469 2909 |    b = 1
+

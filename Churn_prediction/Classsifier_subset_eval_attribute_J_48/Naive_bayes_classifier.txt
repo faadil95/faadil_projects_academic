@@ -1,0 +1,189 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.misc.InputMappedClassifier -I -trim -W weka.classifiers.bayes.NaiveBayes
+Relation:     XY_train_full-weka.filters.unsupervised.attribute.Remove-V-R1-15,17-18
+Instances:    12250
+Attributes:   17
+              age
+              gender
+              region_category
+              membership_category
+              joined_through_referral
+              preferred_offer_types
+              medium_of_operation
+              internet_option
+              days_since_last_login
+              avg_time_spent
+              avg_transaction_value
+              points_in_wallet
+              used_special_discount
+              offer_application_preference
+              past_complaint
+              feedback
+              churn_risk_score
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+InputMappedClassifier:
+
+Naive Bayes Classifier
+
+                                    Class
+Attribute                               0          1
+                                   (0.47)     (0.53)
+=====================================================
+age
+  mean                             36.7893    36.9154
+  std. dev.                        15.9534      15.82
+  weight sum                          5701       6549
+  precision                              1          1
+
+gender
+  M                                 2830.0     3259.0
+  F                                 2873.0     3292.0
+  [total]                           5703.0     6551.0
+
+region_category
+  City                              2211.0     2666.0
+  Village                            899.0      943.0
+  Town                              2594.0     2943.0
+  [total]                           5704.0     6552.0
+
+membership_category
+  No Membership                       84.0     2445.0
+  Platinum Membership               1452.0        1.0
+  Premium Membership                1501.0        1.0
+  Basic Membership                    86.0     2426.0
+  Silver Membership                 1157.0      844.0
+  Gold Membership                   1427.0      838.0
+  [total]                           5707.0     6555.0
+
+joined_through_referral
+  No                                2977.0     3218.0
+  Yes                               2726.0     3333.0
+  [total]                           5703.0     6551.0
+
+preferred_offer_types
+  Gift Vouchers/Coupons             2027.0     2130.0
+  Without Offers                    1736.0     2249.0
+  Credit/Debit Card Offers          1941.0     2173.0
+  [total]                           5704.0     6552.0
+
+medium_of_operation
+  Both                               731.0      769.0
+  Smartphone                        2424.0     2947.0
+  Desktop                           2549.0     2836.0
+  [total]                           5704.0     6552.0
+
+internet_option
+  Wi-Fi                             1868.0     2173.0
+  Mobile_Data                       1899.0     2187.0
+  Fiber_Optic                       1937.0     2192.0
+  [total]                           5704.0     6552.0
+
+days_since_last_login
+  mean                             12.6751    12.9027
+  std. dev.                         5.6193     5.5258
+  weight sum                          5701       6549
+  precision                              1          1
+
+avg_time_spent
+  mean                            297.7785    293.729
+  std. dev.                       333.3148   341.2723
+  weight sum                          5701       6549
+  precision                         0.2999     0.2999
+
+avg_transaction_value
+  mean                          33757.3847 25331.2203
+  std. dev.                     23583.9179  14252.571
+  weight sum                          5701       6549
+  precision                         8.0957     8.0957
+
+points_in_wallet
+  mean                            754.4602   638.4545
+  std. dev.                       170.5946   180.1866
+  weight sum                          5701       6549
+  precision                         0.1705     0.1705
+
+used_special_discount
+  Yes                               3155.0     3590.0
+  No                                2548.0     2961.0
+  [total]                           5703.0     6551.0
+
+offer_application_preference
+  No                                2479.0     3008.0
+  Yes                               3224.0     3543.0
+  [total]                           5703.0     6551.0
+
+past_complaint
+  No                                2892.0     3262.0
+  Yes                               2811.0     3289.0
+  [total]                           5703.0     6551.0
+
+feedback
+  Poor Website                       776.0     1312.0
+  Too many ads                       779.0     1285.0
+  Quality Customer Care              481.0        1.0
+  Poor Customer Service              743.0     1314.0
+  No reason specified                762.0     1304.0
+  User Friendly Website              483.0        1.0
+  Poor Product Quality               755.0     1339.0
+  Products always in Stock           460.0        1.0
+  Reasonable Price                   471.0        1.0
+  [total]                           5710.0     6558.0
+
+
+Attribute mappings:
+
+Model attributes                        	    Incoming attributes
+----------------------------------------	    ----------------
+(numeric) age                           	--> 1 (numeric) age
+(nominal) gender                        	--> 2 (nominal) gender
+(nominal) region_category               	--> 3 (nominal) region_category
+(nominal) membership_category           	--> 4 (nominal) membership_category
+(nominal) joined_through_referral       	--> 5 (nominal) joined_through_referral
+(nominal) preferred_offer_types         	--> 6 (nominal) preferred_offer_types
+(nominal) medium_of_operation           	--> 7 (nominal) medium_of_operation
+(nominal) internet_option               	--> 8 (nominal) internet_option
+(numeric) days_since_last_login         	--> 9 (numeric) days_since_last_login
+(numeric) avg_time_spent                	--> 10 (numeric) avg_time_spent
+(numeric) avg_transaction_value         	--> 11 (numeric) avg_transaction_value
+(numeric) points_in_wallet              	--> 12 (numeric) points_in_wallet
+(nominal) used_special_discount         	--> 13 (nominal) used_special_discount
+(nominal) offer_application_preference  	--> 14 (nominal) offer_application_preference
+(nominal) past_complaint                	--> 15 (nominal) past_complaint
+(nominal) feedback                      	--> 16 (nominal) feedback
+(nominal) churn_risk_score              	--> 17 (nominal) churn_risk_score
+
+
+Time taken to build model: 0.02 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.09 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        5468               86.6286 %
+Incorrectly Classified Instances       844               13.3714 %
+Kappa statistic                          0.729 
+Mean absolute error                      0.1543
+Root mean squared error                  0.2898
+Relative absolute error                 31.0169 %
+Root relative squared error             58.1087 %
+Total Number of Instances             6312     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.792    0.069    0.909      0.792    0.846      0.734    0.953     0.955     0
+                 0.931    0.208    0.838      0.931    0.882      0.734    0.953     0.945     1
+Weighted Avg.    0.866    0.143    0.871      0.866    0.865      0.734    0.953     0.950     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 2324  610 |    a = 0
+  234 3144 |    b = 1
+
