@@ -1,2 +1,2 @@
 # faadil_projects_academic
-Contains data science, ML and NN projects
+Contains Data science, Machine learning projects and research papers
